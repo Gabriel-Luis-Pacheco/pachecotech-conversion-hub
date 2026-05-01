@@ -25,7 +25,7 @@ const items = [
 
 export function Differentiators() {
   return (
-    <section className="bg-gradient-soft py-20 sm:py-28">
+<section className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Diferenciais"

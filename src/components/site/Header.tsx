@@ -29,13 +29,13 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
-        <a
+<a
           href="#top"
           className={`text-lg font-extrabold tracking-tight ${
             scrolled ? "text-foreground" : "text-white"
           }`}
         >
-          Pacheco<span className="text-[#3B82F6]">Tech</span>
+          Pacheco<span className="text-[#22C55E]">Tech</span>
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -52,13 +52,13 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+<div className="flex items-center gap-2">
           <Button
             asChild
             size="sm"
             className="hidden sm:inline-flex bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+<a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
               Falar no Instagram
             </a>
           </Button>

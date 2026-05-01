@@ -42,9 +42,9 @@ export function FinalCTA() {
   }
 
   return (
-    <section id="contato" className="relative overflow-hidden bg-gradient-hero py-20 text-white sm:py-28">
+<section id="contato" className="relative overflow-hidden bg-[#22C55E] py-20 text-white sm:py-28">
       <div className="pointer-events-none absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-white/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-[#60A5FA]/30 blur-3xl" />
+<div className="pointer-events-none absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-green-500/20 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <div>

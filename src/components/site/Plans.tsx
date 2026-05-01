@@ -40,21 +40,22 @@ const plans = [
 
 export function Plans() {
   return (
-    <section id="planos" className="bg-background py-20 sm:py-28">
+<section id="planos" className="bg-[#0F172A] py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeader
+<SectionHeader
           eyebrow="Planos"
           title="Três caminhos. Um propósito: clientes."
           subtitle="Escolha o nível de profundidade. O foco em resultado nunca muda."
+          light
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {plans.map((p) => (
-            <article
+<article
               key={p.name}
               className={`relative flex flex-col rounded-2xl border p-7 transition-all hover:-translate-y-1 sm:p-8 ${
                 p.highlight
                   ? "border-primary bg-gradient-hero text-white shadow-elegant"
-                  : "border-border bg-card text-foreground shadow-card hover:shadow-elegant"
+                  : "border-white/10 bg-white/5 text-white shadow-card hover:shadow-elegant"
               }`}
             >
               {p.highlight && (
@@ -90,14 +91,14 @@ export function Plans() {
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
                 }`}
               >
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
-                  Conversar sobre {p.name}
+<a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+                  Quero {p.name}
                 </a>
               </Button>
             </article>
           ))}
         </div>
-        <p className="mt-8 text-center text-sm text-muted-foreground">
+<p className="mt-8 text-center text-sm text-white/60">
           Valores definidos após o diagnóstico, conforme escopo. Faixa de referência: R$297 – R$997.
         </p>
       </div>

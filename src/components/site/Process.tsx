@@ -1,3 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { INSTAGRAM_URL } from "@/lib/contact";
+
 const steps = [
   {
     n: "01",
@@ -45,7 +48,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="processo" className="bg-gradient-soft py-20 sm:py-28">
+<section id="processo" className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Processo"
@@ -53,7 +56,7 @@ export function Process() {
           subtitle="Um sistema claro, sem improviso. Cada etapa entrega algo concreto."
         />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+<div className="mt-12 grid gap-5 md:grid-cols-2">
           {steps.map((s, i) => (
             <article
               key={s.n}
@@ -80,6 +83,19 @@ export function Process() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Mini CTA after process */}
+        <div className="mt-12 text-center">
+          <Button
+            asChild
+            size="lg"
+            className="h-12 bg-primary px-8 text-base font-semibold text-primary-foreground hover:bg-primary/90"
+          >
+<a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+              Falar no Instagram
+            </a>
+          </Button>
         </div>
       </div>
     </section>

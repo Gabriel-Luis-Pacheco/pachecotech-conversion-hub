@@ -67,22 +67,24 @@
 
 :root {
   --radius: 0.75rem;
-  /* PachecoTech brand */
+  /* PachecoTech brand - Green identity */
   --background: oklch(1 0 0);
   --foreground: oklch(0.18 0.02 265); /* #111827-ish */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0.02 265);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 265);
-  /* Primary: #1D4ED8 */
-  --primary: oklch(0.488 0.213 263);
+  /* Primary: #0D3D2C - Dark green */
+  --primary: oklch(0.258 0.092 168);
   --primary-foreground: oklch(0.99 0 0);
-  /* Brand secondary: #3B82F6 */
-  --brand-light: oklch(0.62 0.18 258);
-  --brand-dark: oklch(0.42 0.21 264);
-  --gradient-hero: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%);
-  --gradient-soft: linear-gradient(180deg, oklch(0.97 0.02 258) 0%, oklch(1 0 0) 100%);
-  --shadow-elegant: 0 10px 40px -12px color-mix(in oklab, #1D4ED8 25%, transparent);
+  /* Brand: #0D3D2C / lighter green for accents */
+  --brand-light: oklch(0.35 0.08 168);
+  --brand-dark: oklch(0.2 0.08 168);
+  /* Dark background for sections: #0F172A */
+  --background-dark: oklch(0.08 0.02 240);
+  --gradient-hero: linear-gradient(135deg, #0D3D2C 0%, #145240 100%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.96 0.01 200) 0%, oklch(1 0 0) 100%);
+  --shadow-elegant: 0 10px 40px -12px color-mix(in oklab, #0D3D2C 30%, transparent);
   --shadow-card: 0 4px 20px -8px oklch(0.18 0.02 265 / 0.1);
   --secondary: oklch(0.97 0.01 258);
   --secondary-foreground: oklch(0.18 0.02 265);
@@ -95,8 +97,8 @@
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-1: oklch(0.258 0.092 168);
+  --chart-2: oklch(0.35 0.08 168);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
@@ -175,6 +177,15 @@
 }
 @utility bg-gradient-soft {
   background-image: var(--gradient-soft);
+}
+@utility bg-section-dark {
+  background-color: #0F172A;
+}
+@utility bg-section-light {
+  background-color: #F9FAFB;
+}
+@utility bg-cta-green {
+  background-color: #22C55E;
 }
 @utility shadow-elegant {
   box-shadow: var(--shadow-elegant);
