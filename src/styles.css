@@ -62,17 +62,26 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.75rem;
+  /* PachecoTech brand */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.18 0.02 265); /* #111827-ish */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.18 0.02 265);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.18 0.02 265);
+  /* Primary: #1D4ED8 */
+  --primary: oklch(0.488 0.213 263);
+  --primary-foreground: oklch(0.99 0 0);
+  /* Brand secondary: #3B82F6 */
+  --brand-light: oklch(0.62 0.18 258);
+  --brand-dark: oklch(0.42 0.21 264);
+  --gradient-hero: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.97 0.02 258) 0%, oklch(1 0 0) 100%);
+  --shadow-elegant: 0 10px 40px -12px color-mix(in oklab, #1D4ED8 25%, transparent);
+  --shadow-card: 0 4px 20px -8px oklch(0.18 0.02 265 / 0.1);
+  --secondary: oklch(0.97 0.01 258);
+  --secondary-foreground: oklch(0.18 0.02 265);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
   --accent: oklch(0.968 0.007 247.896);
