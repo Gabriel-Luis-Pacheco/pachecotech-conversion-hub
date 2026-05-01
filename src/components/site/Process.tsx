@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { INSTAGRAM_URL } from "@/lib/contact";
+import { openInstagram } from "@/lib/contact";
 
 const steps = [
   {
@@ -28,8 +28,8 @@ const steps = [
     title: "Construção",
     desc: "Execução técnica com foco em performance e conversão.",
     items: [
-      "Landing page responsiva",
-      "Integração com WhatsApp ou formulário",
+"Landing page responsiva",
+      "Integração com Instagram",
       "Layout orientado à conversão",
     ],
   },
@@ -85,14 +85,14 @@ export function Process() {
           ))}
         </div>
 
-        {/* Mini CTA after process */}
+{/* Mini CTA after process */}
         <div className="mt-12 text-center">
           <Button
             asChild
             size="lg"
             className="h-12 bg-primary px-8 text-base font-semibold text-primary-foreground hover:bg-primary/90"
           >
-<a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+            <a href="#" onClick={(e) => { e.preventDefault(); openInstagram(); }}>
               Falar no Instagram
             </a>
           </Button>

@@ -25,11 +25,12 @@ const items = [
 
 export function Differentiators() {
   return (
-<section className="bg-white py-20 sm:py-28">
+<section className="bg-[#0F172A] py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Diferenciais"
           title="Por que esse processo entrega mais"
+          light
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it) => (

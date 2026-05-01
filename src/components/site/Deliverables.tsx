@@ -28,7 +28,6 @@ const deliverables = [
     subtitle: "Seu ativo digital funcionando",
     items: [
       "Landing page responsiva",
-      "Integração com WhatsApp ou formulário",
       "Estrutura otimizada para conversão",
       "Pronta para uso imediato",
     ],
@@ -38,12 +37,13 @@ const deliverables = [
 
 export function Deliverables() {
   return (
-<section id="entregas" className="bg-[#F9FAFB] py-20 sm:py-28">
+<section id="entregas" className="bg-[#0F172A] py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="O que você recebe"
           title="Três entregas, um resultado: clientes"
           subtitle="Você leva um sistema completo, não apenas uma página."
+          light
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">

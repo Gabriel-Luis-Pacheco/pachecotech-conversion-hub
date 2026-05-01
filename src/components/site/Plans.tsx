@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { INSTAGRAM_URL } from "@/lib/contact";
+import { openInstagram } from "@/lib/contact";
 import { SectionHeader } from "./Process";
 
 const plans = [
@@ -10,7 +10,7 @@ const plans = [
       "Diagnóstico estratégico essencial",
       "Página única, responsiva",
       "Copy direto para serviço/oferta",
-      "Integração com Instagram ou formulário",
+      "Integração com Instagram",
     ],
   },
   {
@@ -67,7 +67,7 @@ export function Plans() {
               <p className={`mt-2 text-sm ${p.highlight ? "text-white/85" : "text-muted-foreground"}`}>
                 {p.pitch}
               </p>
-              <ul className="mt-6 flex-1 space-y-3">
+<ul className="mt-6 flex-1 space-y-3">
                 {p.items.map((it) => (
                   <li key={it} className="flex items-start gap-2.5 text-sm">
                     <svg
@@ -79,7 +79,7 @@ export function Plans() {
                     >
                       <path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z" clipRule="evenodd" />
                     </svg>
-                    <span className={p.highlight ? "text-white/95" : "text-foreground/85"}>{it}</span>
+                    <span className={p.highlight ? "text-white" : "text-white/90"}>{it}</span>
                   </li>
                 ))}
               </ul>
@@ -91,7 +91,7 @@ export function Plans() {
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
                 }`}
               >
-<a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+<a href="#" onClick={(e) => { e.preventDefault(); openInstagram(); }}>
                   Quero {p.name}
                 </a>
               </Button>

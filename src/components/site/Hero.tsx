@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { INSTAGRAM_URL } from "@/lib/contact";
+import { openInstagram } from "@/lib/contact";
 import heroImg from "@/assets/hero-pachecotech.jpg";
 
 export function Hero() {
@@ -8,13 +8,13 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden bg-gradient-hero pt-28 pb-20 text-white sm:pt-36 sm:pb-28"
     >
-{/* glow accents */}
+      {/* glow accents */}
       <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-white/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 -right-40 h-[600px] w-[600px] rounded-full bg-green-500/20 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
         <div className="animate-fade-up">
-<span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
             Processo validado na prática
           </span>
@@ -26,6 +26,7 @@ export function Hero() {
             Antes de construir qualquer coisa, eu entendo o seu negócio.
             Depois executo com foco claro: <strong className="text-white">resultados.</strong>
           </p>
+          
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button
               asChild
@@ -39,12 +40,14 @@ export function Hero() {
               size="lg"
               variant="outline"
               className="h-12 border-white/40 bg-transparent px-6 text-base font-semibold text-white hover:bg-white/10 hover:text-white"
+              onClick={openInstagram}
             >
-<a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+              <a href="#" onClick={(e) => { e.preventDefault(); openInstagram(); }}>
                 Falar no Instagram
               </a>
             </Button>
           </div>
+          
           <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/75">
             <Stat label="Diagnóstico estratégico" />
             <Stat label="Copy de conversão" />
@@ -68,13 +71,13 @@ export function Hero() {
             <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
               Resultado projetado
             </p>
-<p className="mt-0.5 text-sm font-bold">Potencial de geração de contatos</p>
+            <p className="mt-0.5 text-sm font-bold">Potencial de geração de contatos</p>
           </div>
           <div className="absolute -top-4 -right-4 hidden rounded-xl border border-white/15 bg-white/95 px-4 py-3 text-foreground shadow-elegant backdrop-blur sm:block">
             <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
               Foco
             </p>
-<p className="mt-0.5 text-sm font-bold">Conversão de clientes</p>
+            <p className="mt-0.5 text-sm font-bold">Conversão de clientes</p>
           </div>
         </div>
       </div>

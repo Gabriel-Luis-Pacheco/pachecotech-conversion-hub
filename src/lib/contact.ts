@@ -1,14 +1,32 @@
 export const INSTAGRAM_HANDLE = "pachecotechh";
-export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
+export const INSTAGRAM_URL = `https://ig.me/m/${INSTAGRAM_HANDLE}`;
 
-export const WHATSAPP_NUMBER = "5511999999999"; // Replace with actual number (format: countrycode + number)
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Oi!%20Quero%20falar%20sobre%20meu%20projeto.`;
+// Direct message URL for Instagram - opens DM directly
+export const INSTAGRAM_DM_URL = INSTAGRAM_URL;
 
-export function openInstagramDM(prefilledMessage?: string) {
-  if (prefilledMessage && typeof navigator !== "undefined" && navigator.clipboard) {
-    navigator.clipboard.writeText(prefilledMessage).catch(() => {});
-  }
+// Generate Instagram DM pre-filled message
+export function generateInstagramMessage(name: string, contact: string, project: string): string {
+  return `Olá! Sou ${name}. Contato: ${contact}. Projeto: ${project}`;
+}
+
+// Legacy function - generate WhatsApp message (now redirects to Instagram)
+export function generateWhatsAppMessage(name: string, contact: string, project: string): string {
+  return generateInstagramMessage(name, contact, project);
+}
+
+// Open Instagram in new tab
+export function openInstagram() {
   if (typeof window !== "undefined") {
     window.open(INSTAGRAM_URL, "_blank", "noopener,noreferrer");
   }
+}
+
+// Open WhatsApp - redirects to Instagram DM
+export function openWhatsApp(message?: string) {
+  openInstagram();
+}
+
+// Legacy function for backwards compatibility
+export function openInstagramDM(prefilledMessage?: string) {
+  openInstagram();
 }
