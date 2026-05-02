@@ -36,7 +36,7 @@ export const Route = createRootRoute({
           "Landing pages estratégicas para prestadores de serviço, coaches e criadores de infoproduto. Diagnóstico, copy e construção focados em conversão.",
       },
       { name: "author", content: "PachecoTech" },
-      { property: "og:title", content: "PachecoTech — Páginas que trazem clientes" },
+      { property: "og:title", content: "PachecoTech — Páginas que trazem clientes, com estratégia" },
       {
         property: "og:description",
         content:
@@ -44,6 +44,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "PachecoTech — Páginas que trazem clientes, com estratégia" },
+      { name: "description", content: "This application builds strategic, high-converting websites for digital businesses and local service providers." },
+      { property: "og:description", content: "This application builds strategic, high-converting websites for digital businesses and local service providers." },
+      { name: "twitter:description", content: "This application builds strategic, high-converting websites for digital businesses and local service providers." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/217eb70a-edad-4f8d-b852-58b8875e47b8/id-preview-120a7f3a--6520fcfd-002f-48e7-9ae7-fa23f08609c3.lovable.app-1777665657665.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/217eb70a-edad-4f8d-b852-58b8875e47b8/id-preview-120a7f3a--6520fcfd-002f-48e7-9ae7-fa23f08609c3.lovable.app-1777665657665.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
