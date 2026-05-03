@@ -12,11 +12,11 @@ const features = [
   { label: "Prazo", k: "10-12 dias", a: "14-18 dias", g: "21-28 dias" },
 ];
 
-const plans = [
+const plans: { key: "k" | "a" | "g"; name: string; featured?: boolean }[] = [
   { key: "k", name: "Kickstart" },
   { key: "a", name: "Accelerator", featured: true },
   { key: "g", name: "Growth Machine" },
-] as const;
+];
 
 export function ComparisonTable() {
   return (
