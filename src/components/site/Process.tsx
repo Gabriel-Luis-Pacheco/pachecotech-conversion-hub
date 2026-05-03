@@ -1,161 +1,49 @@
-import { Button } from "@/components/ui/button";
-import { openInstagram } from "@/lib/contact";
-
 const steps = [
-  {
-    n: "01",
-    title: "Diagnóstico",
-    desc: "Entendo o terreno antes de qualquer construção.",
-    items: [
-      "Análise do negócio",
-      "Definição do cliente ideal",
-      "Análise dos concorrentes",
-      "Documento estratégico com posicionamento e direção",
-    ],
-  },
-  {
-    n: "02",
-    title: "Estratégia",
-    desc: "Transformo o diagnóstico em uma estrutura que vende.",
-    items: [
-      "Definição da estrutura da página",
-      "Copywriting focado em conversão",
-      "Mensagem de posicionamento clara",
-    ],
-  },
-  {
-    n: "03",
-    title: "Construção",
-    desc: "Execução técnica com foco em performance e conversão.",
-    items: [
-"Landing page responsiva",
-      "Integração com Instagram",
-      "Layout orientado à conversão",
-    ],
-  },
-  {
-    n: "04",
-    title: "Entrega",
-    desc: "Você recebe a página pronta para gerar clientes.",
-    items: [
-      "Página publicada",
-      "Domínio configurado",
-      "Acesso completo",
-      "Revisão incluída",
-    ],
-  },
+  { n: "01", color: "#60A5FA", title: "Diagnóstico", desc: "Entendo seu negócio, público e concorrentes.", bullets: ["Análise do negócio", "Persona ideal", "Concorrência"] },
+  { n: "02", color: "#FACC15", title: "Estratégia", desc: "Defino mensagem, funil e pontos de conversão.", bullets: ["Posicionamento", "Copy estratégica", "Estrutura"] },
+  { n: "03", color: "#22C55E", title: "Construção", desc: "Construo a página focada em performance.", bullets: ["Design responsivo", "Integrações", "SEO básico"] },
+  { n: "04", color: "#0D3D2C", title: "Entrega", desc: "Publicação, ajustes finais e treinamento.", bullets: ["Domínio configurado", "Revisões", "Você no controle"] },
 ];
 
 export function Process() {
   return (
-<section id="processo" className="bg-white py-20 sm:py-28">
+    <section id="processo" className="relative overflow-hidden bg-ink py-20 text-white sm:py-28">
+      <div className="pointer-events-none absolute -top-20 right-0 h-96 w-96 rounded-full bg-brand-neon/10 blur-3xl" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeader
-          eyebrow="Processo"
-          title="Como funciona, em 4 etapas"
-          subtitle="Um sistema claro, sem improviso. Cada etapa entrega algo concreto."
-        />
-
-<div className="mt-12 grid gap-5 md:grid-cols-2">
-          {steps.map((s, i) => (
-            <article
-              key={s.n}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant sm:p-8"
-              style={{ animationDelay: `${i * 80}ms` }}
-            >
-              <div className="absolute -right-6 -top-6 text-[7rem] font-black leading-none text-primary/5 transition-colors group-hover:text-primary/10">
-                {s.n}
-              </div>
-              <div className="relative">
-                <span className="inline-flex h-8 items-center rounded-full bg-primary/10 px-3 text-xs font-bold tracking-wider text-primary">
-                  ETAPA {s.n}
-                </span>
-                <h3 className="mt-4 text-2xl font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-                <ul className="mt-5 space-y-2.5">
-                  {s.items.map((it) => (
-                    <li key={it} className="flex items-start gap-2.5 text-sm">
-                      <CheckIcon />
-                      <span className="text-foreground/85">{it}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
+        <div className="text-center">
+          <span className="font-script text-2xl text-brand-yellow">nosso processo →</span>
+          <h2 className="mt-2 font-display text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
+            4 etapas. <em className="text-brand-neon">Zero</em> improviso.
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-white/60">
+            Um caminho claro do diagnóstico à entrega — sem surpresas.
+          </p>
         </div>
 
-{/* Mini CTA after process */}
-        <div className="mt-12 text-center">
-          <Button
-            asChild
-            size="lg"
-            className="h-12 bg-primary px-8 text-base font-semibold text-primary-foreground hover:bg-primary/90"
-          >
-            <a href="#" onClick={(e) => { e.preventDefault(); openInstagram(); }}>
-              Falar no Instagram
-            </a>
-          </Button>
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s, i) => (
+            <div key={s.n} className="relative rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:scale-[1.02] hover:bg-white/[0.06]">
+              <div className="font-display text-5xl font-black opacity-90" style={{ color: s.color }}>{s.n}</div>
+              <h3 className="mt-4 font-display text-xl font-bold">{s.title}</h3>
+              <p className="mt-2 text-sm text-white/65">{s.desc}</p>
+              <ul className="mt-4 space-y-1.5 text-sm text-white/70">
+                {s.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: s.color }} />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              {i < steps.length - 1 && (
+                <svg aria-hidden className="absolute -right-4 top-10 hidden lg:block" width="32" height="20" viewBox="0 0 32 20" fill="none">
+                  <path d="M2 10 Q 16 -2, 30 10" stroke="#22C55E" strokeWidth="2" strokeDasharray="3 3" fill="none"/>
+                  <path d="M26 6 L30 10 L26 14" stroke="#22C55E" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                </svg>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  );
-}
-
-export function SectionHeader({
-  eyebrow,
-  title,
-  subtitle,
-  light,
-}: {
-  eyebrow?: string;
-  title: string;
-  subtitle?: string;
-  light?: boolean;
-}) {
-  return (
-    <div className="mx-auto max-w-2xl text-center">
-      {eyebrow && (
-        <span
-          className={`text-xs font-bold uppercase tracking-[0.2em] ${
-            light ? "text-white/70" : "text-primary"
-          }`}
-        >
-          {eyebrow}
-        </span>
-      )}
-      <h2
-        className={`mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl ${
-          light ? "text-white" : "text-foreground"
-        }`}
-      >
-        {title}
-      </h2>
-      {subtitle && (
-        <p
-          className={`mt-4 text-base leading-relaxed sm:text-lg ${
-            light ? "text-white/80" : "text-muted-foreground"
-          }`}
-        >
-          {subtitle}
-        </p>
-      )}
-    </div>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg
-      className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-    >
-      <path
-        fillRule="evenodd"
-        d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z"
-        clipRule="evenodd"
-      />
-    </svg>
   );
 }
