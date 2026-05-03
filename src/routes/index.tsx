@@ -6,8 +6,12 @@ import { Process } from "@/components/site/Process";
 import { Deliverables } from "@/components/site/Deliverables";
 import { UseCases } from "@/components/site/UseCases";
 import { Plans } from "@/components/site/Plans";
+import { ComparisonTable } from "@/components/site/ComparisonTable";
+import { AfterDelivery } from "@/components/site/AfterDelivery";
 import { Differentiators } from "@/components/site/Differentiators";
 import { Projections } from "@/components/site/Projections";
+import { Positioning } from "@/components/site/Positioning";
+import { CostTransparency } from "@/components/site/CostTransparency";
 import { FAQ } from "@/components/site/FAQ";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
@@ -27,7 +31,11 @@ function Index() {
         <Process />
         <UseCases />
         <Plans />
+        <ComparisonTable />
+        <AfterDelivery />
         <Differentiators />
+        <Positioning />
+        <CostTransparency />
         <FAQ />
         <FinalCTA />
       </main>

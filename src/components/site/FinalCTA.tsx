@@ -28,10 +28,10 @@ export function FinalCTA() {
         <div>
           <span className="font-script text-2xl text-brand-yellow">vamos conversar →</span>
           <h2 className="mt-2 font-display text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Vamos fazer sua página <em className="text-brand-neon">trabalhar</em> por você.
+            Pronto pra <em className="text-brand-neon">transformar</em> seu negócio?
           </h2>
           <p className="mt-5 max-w-md text-white/70">
-            Manda uma mensagem. Respondo em poucas horas e marco uma conversa estratégica gratuita.
+            Não é só site. É um sistema que gera cliente. Me manda uma mensagem — respondo em poucas horas.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
