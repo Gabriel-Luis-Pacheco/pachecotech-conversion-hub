@@ -2,11 +2,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   { q: "Posso fazer isso sozinho?", a: "Pode. Mas a parte mais difícil não é construir — é definir o quê, pra quem e como comunicar. É exatamente nisso que entrego mais valor." },
-  { q: "Quanto custa?", a: "Os planos começam em R$297 e vão até R$997. O preço final depende da complexidade do projeto e do que você precisa." },
-  { q: "Quanto tempo leva?", a: "Em média de 5 a 14 dias úteis, dependendo do plano. Briefing rápido e execução enxuta." },
-  { q: "Posso pedir revisões?", a: "Sim. Cada plano inclui rodadas de revisão para deixar o site exatamente como você precisa." },
-  { q: "Funciona pro meu nicho?", a: "Funciona pra qualquer negócio que precisa atrair clientes online: prestadores, coaches, infoprodutores, lojas locais." },
-  { q: "E depois da entrega?", a: "Você fica no controle total — domínio, conta, código. Suporte estendido nos planos superiores." },
+  { q: "Quanto custa?", a: "Os planos começam em R$600 (Kickstart) e vão até R$2.500 (Growth Machine). Cada plano tem mensalidade opcional pra suporte contínuo. O preço final depende da complexidade do projeto." },
+  { q: "Quanto tempo leva?", a: "Em média de 10 a 28 dias úteis, dependendo do plano. Briefing rápido e execução enxuta." },
+  { q: "Posso pedir revisões?", a: "Sim. Cada plano inclui rodadas de revisão pra deixar o site exatamente como você precisa." },
+  { q: "Funciona pro meu nicho?", a: "Funciona pra qualquer negócio que precisa atrair clientes online: prestadores, coaches, infoprodutores, lojas locais, restaurantes." },
+  {
+    q: "E depois da entrega?",
+    a: "Você fica no controle total. Seu domínio, seu código, seu site. A gente acompanha os primeiros 30-60 dias, analisa resultado junto e ajusta se precisar.\n\nSe quer suporte contínuo (consultoria + otimizações), entra a mensalidade do seu plano. Sem vínculo — cancela quando quiser. Se não quer, sem problema. Você fica com tudo e a gente se fala só quando precisar.",
+  },
 ];
 
 export function FAQ() {
@@ -25,7 +28,7 @@ export function FAQ() {
               <AccordionTrigger className="py-5 text-left font-display text-lg font-bold text-ink hover:no-underline">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-ink/70 pb-5">{f.a}</AccordionContent>
+              <AccordionContent className="text-ink/70 pb-5 whitespace-pre-line">{f.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

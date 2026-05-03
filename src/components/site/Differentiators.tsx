@@ -1,8 +1,24 @@
 const items = [
-  { icon: "🧠", title: "Estratégia antes do design", desc: "Briefing profundo. Cada decisão visual tem motivo de negócio." },
-  { icon: "🎯", title: "Foco em conversão", desc: "Copy, estrutura e CTAs pensados para gerar contatos reais." },
-  { icon: "⚡", title: "Entrega rápida", desc: "Em dias, não semanas. Processo enxuto e direto ao ponto." },
-  { icon: "🔍", title: "Processo transparente", desc: "Você acompanha cada etapa. Sem caixa-preta, sem mistério." },
+  {
+    icon: "🧠",
+    title: "Estratégia antes do design",
+    desc: "Seu site não é bonito só por ser bonito. Cada cor, cada palavra, cada clique tem motivo. O motivo? Gerar resultado pro seu negócio.",
+  },
+  {
+    icon: "🎯",
+    title: "Foco em resultado, não em tendência",
+    desc: "Não fazemos site porque tá na moda. Fazemos porque você precisa vender. Métrica que importa: cliente novo chegando.",
+  },
+  {
+    icon: "⚡",
+    title: "Entrega rápida, qualidade total",
+    desc: "De conversa a site pronto: 2-3 semanas. Sem demora, sem fila de espera. Qualidade não cai porque é rápido.",
+  },
+  {
+    icon: "🔍",
+    title: "Processo transparente do início ao fim",
+    desc: "Você sabe exatamente o que vai receber. Sem surpresa, sem caixa-preta. A gente trabalha junto, não pro lado.",
+  },
 ];
 
 export function Differentiators() {
@@ -29,7 +45,7 @@ export function Differentiators() {
         <div className="mt-12 rounded-3xl bg-brand-dark p-8 sm:p-12 text-white relative overflow-hidden">
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-neon/20 blur-3xl" />
           <p className="relative font-display text-2xl italic leading-snug sm:text-3xl">
-            "Sites bonitos são fáceis. Sites que <span className="text-brand-neon not-italic font-bold">trazem clientes</span> exigem estratégia. É exatamente isso que entrego."
+            "Sites bonitos são fáceis. Sites que <span className="text-brand-neon not-italic font-bold">trazem cliente</span> exigem estratégia. Isso é o que entrego. E você vê resultado."
           </p>
         </div>
       </div>
