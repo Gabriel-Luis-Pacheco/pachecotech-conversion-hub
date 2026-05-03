@@ -22,12 +22,12 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <Process />
+        <Projections />
         <Deliverables />
+        <Process />
         <UseCases />
         <Plans />
         <Differentiators />
-        <Projections />
         <FAQ />
         <FinalCTA />
       </main>

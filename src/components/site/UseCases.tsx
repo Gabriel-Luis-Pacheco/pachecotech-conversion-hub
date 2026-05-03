@@ -1,60 +1,34 @@
-import { SectionHeader } from "./Process";
-
 const cases = [
-  {
-    tag: "Prestador de serviço local",
-    icon: WrenchIcon,
-    problem: "Está perdendo clientes por não ter presença online consistente.",
-    solution: "Página rápida, com CTA direto e foco em conversão para leads locais.",
-  },
-  {
-    tag: "Coach / consultor",
-    icon: SparkIcon,
-    problem: "Depende inteiramente do Instagram para ser encontrado.",
-    solution: "Página de captura com posicionamento e fluxo claro de qualificação.",
-  },
-  {
-    tag: "Criador de infoproduto",
-    icon: ChartIcon,
-    problem: "Tem tráfego, mas a página não converte em vendas.",
-    solution: "Sales page otimizada — copy, estrutura e oferta ajustadas ao público.",
-  },
+  { emoji: "🔧", who: "Prestador local", problem: "Site institucional que ninguém acha.", solution: "Página com SEO local, copy clara e CTA direto.", result: "Mais orçamentos por semana." },
+  { emoji: "🎓", who: "Coach / Consultor", problem: "Vende no boca-a-boca, sem escala.", solution: "Funil estratégico com posicionamento e prova.", result: "Agenda lotada de calls qualificadas." },
+  { emoji: "📚", who: "Criador de infoproduto", problem: "Tráfego não vira venda.", solution: "Landing focada em copy de conversão e oferta.", result: "Taxa de conversão multiplicada." },
 ];
 
 export function UseCases() {
   return (
-<section className="bg-white py-20 sm:py-28">
+    <section className="relative bg-cream py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeader
-          eyebrow="Para quem é"
-          title="Casos onde isso funciona"
-          subtitle="Cenários reais onde uma página com estratégia muda o jogo."
-        />
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="max-w-2xl">
+          <span className="font-script text-2xl text-brand-mid">isso é pra você se →</span>
+          <h2 className="mt-2 font-display text-4xl font-black tracking-tight text-ink sm:text-5xl">
+            Para quem trabalho.
+          </h2>
+        </div>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {cases.map((c) => (
-            <article
-              key={c.tag}
-              className="rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant sm:p-7"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <c.icon />
+            <div key={c.who} className="group rounded-3xl border border-black/5 bg-white p-7 transition-all hover:-translate-y-1 hover:shadow-elegant">
+              <div className="text-5xl">{c.emoji}</div>
+              <h3 className="mt-4 font-display text-2xl font-bold text-ink">{c.who}</h3>
+              <div className="mt-5 space-y-3 text-sm">
+                <Row label="Problema" text={c.problem} color="text-red-500" />
+                <Row label="Solução" text={c.solution} color="text-brand-mid" />
               </div>
-              <h3 className="mt-5 text-lg font-bold">{c.tag}</h3>
-              <div className="mt-4 space-y-3">
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
-                    Problema
-                  </p>
-                  <p className="mt-1 text-sm text-foreground/85">{c.problem}</p>
-                </div>
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
-                    Solução
-                  </p>
-                  <p className="mt-1 text-sm text-foreground/85">{c.solution}</p>
-                </div>
+              <div className="mt-5 rounded-2xl bg-brand-neon/15 px-4 py-3">
+                <p className="text-xs font-bold uppercase tracking-wider text-brand-mid">Resultado</p>
+                <p className="mt-0.5 font-semibold text-ink">{c.result}</p>
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>
@@ -62,25 +36,11 @@ export function UseCases() {
   );
 }
 
-function WrenchIcon() {
+function Row({ label, text, color }: { label: string; text: string; color: string }) {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M14.7 6.3a4 4 0 00-5.4 5.4l-6 6a2 2 0 102.8 2.8l6-6a4 4 0 005.4-5.4l-2.4 2.4-2.4-2.4 2.4-2.4z" />
-    </svg>
-  );
-}
-function SparkIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8" />
-    </svg>
-  );
-}
-function ChartIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 3v18h18" />
-      <path d="M7 14l4-4 3 3 5-6" />
-    </svg>
+    <div>
+      <p className={`text-xs font-bold uppercase tracking-wider ${color}`}>{label}</p>
+      <p className="mt-0.5 text-ink/80">{text}</p>
+    </div>
   );
 }

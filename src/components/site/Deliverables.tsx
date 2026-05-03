@@ -1,54 +1,60 @@
-import { SectionHeader } from "./Process";
-
-const deliverables = [
+const services = [
   {
-    title: "Documento Estratégico",
-    subtitle: "O raciocínio por trás da página",
-    items: [
-      "Análise do seu negócio",
-      "Definição do cliente ideal",
-      "Análise de concorrentes",
-      "Posicionamento claro",
-    ],
-    type: "document",
+    tag: "Marketing & Briefing",
+    title: "Estratégia antes de tudo",
+    desc: "Diagnóstico do negócio, persona, análise de concorrentes, posicionamento de marca e estrutura de funil.",
+    chips: ["#briefing", "#estratégia", "#persona"],
+    illustration: <MarketingIllustration />,
+    accent: "#60A5FA",
   },
   {
-    title: "Copy que vende",
-    subtitle: "Texto pensado para gerar ação",
-    items: [
-      "Headline principal",
-      "Subheadline",
-      "Seções completas da página",
-      "CTAs estratégicos",
-    ],
-    type: "copy",
+    tag: "Branding & Identidade",
+    title: "Identidade que conecta",
+    desc: "Identidade visual, paleta de cores, tipografia, tom de voz e posicionamento visual da marca.",
+    chips: ["#branding", "#identidade", "#design"],
+    illustration: <BrandingIllustration />,
+    accent: "#FACC15",
   },
   {
-    title: "Página pronta",
-    subtitle: "Seu ativo digital funcionando",
-    items: [
-      "Landing page responsiva",
-      "Estrutura otimizada para conversão",
-      "Pronta para uso imediato",
-    ],
-    type: "page",
+    tag: "Site Profissional",
+    title: "Página que converte",
+    desc: "Landing page responsiva, copy estratégica, integração com Instagram/WhatsApp, domínio configurado.",
+    chips: ["#landing", "#conversão", "#seguro"],
+    illustration: <SiteIllustration />,
+    accent: "#22C55E",
   },
 ];
 
 export function Deliverables() {
   return (
-<section id="entregas" className="bg-[#0F172A] py-20 sm:py-28">
+    <section id="servicos" className="relative bg-cream py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeader
-          eyebrow="O que você recebe"
-          title="Três entregas, um resultado: clientes"
-          subtitle="Você leva um sistema completo, não apenas uma página."
-          light
-        />
+        <div className="max-w-2xl">
+          <span className="rounded-full bg-brand-neon/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-mid">
+            O que você recebe
+          </span>
+          <h2 className="mt-4 font-display text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">
+            Não é só um site. É um <em className="text-brand-mid">sistema</em> de vendas.
+          </h2>
+        </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {deliverables.map((item, i) => (
-            <DeliverableCard key={item.title} item={item} index={i} />
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          {services.map((s) => (
+            <article key={s.title} className="group relative flex flex-col overflow-hidden rounded-3xl border border-black/5 bg-white p-7 transition-all hover:-translate-y-1 hover:shadow-elegant">
+              <div className="flex h-44 items-center justify-center rounded-2xl" style={{ backgroundColor: `${s.accent}1A` }}>
+                {s.illustration}
+              </div>
+              <span className="mt-6 text-xs font-bold uppercase tracking-wider" style={{ color: s.accent === "#FACC15" ? "#92580E" : s.accent }}>
+                {s.tag}
+              </span>
+              <h3 className="mt-2 font-display text-2xl font-bold text-ink">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/70">{s.desc}</p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {s.chips.map((c) => (
+                  <span key={c} className="rounded-full bg-ink/5 px-2.5 py-1 text-xs font-medium text-ink/70">{c}</span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </div>
@@ -56,154 +62,46 @@ export function Deliverables() {
   );
 }
 
-function DeliverableCard({ item, index }: { item: (typeof deliverables)[0]; index: number }) {
+function MarketingIllustration() {
   return (
-    <article className="group relative overflow-hidden rounded-3xl border border-gray-200/60 bg-white p-1 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-primary/5">
-      {/* Card glow on hover */}
-      <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-primary/0 via-primary/5 to-primary/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      
-      <div className="relative rounded-[22px] bg-white p-6 sm:p-8">
-        {/* Visual mockup based on type */}
-        <div className="mt-6 mb-6">
-          {item.type === "document" && <DocumentMockup />}
-          {item.type === "copy" && <CopyMockup />}
-          {item.type === "page" && <PageMockup />}
-        </div>
-
-        {/* Title */}
-        <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
-        <p className="mt-1.5 text-sm text-gray-500">{item.subtitle}</p>
-
-        {/* Features */}
-        <ul className="mt-5 space-y-2.5">
-          {item.items.map((feature) => (
-            <li key={feature} className="flex items-center gap-2.5 text-sm text-gray-600">
-              <svg
-                className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Product indicator */}
-        <div className="mt-6 flex items-center gap-2 text-xs font-medium text-primary">
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-[10px]">
-            {index + 1}
-          </span>
-          Entrega {index + 1} de 3
-        </div>
-      </div>
-    </article>
+    <svg viewBox="0 0 200 140" className="h-32 w-auto">
+      <circle cx="60" cy="55" r="22" fill="#0D3D2C" />
+      <circle cx="60" cy="46" r="9" fill="#F0FDF4" />
+      <rect x="44" y="58" width="32" height="28" rx="14" fill="#F0FDF4" />
+      <rect x="100" y="30" width="80" height="60" rx="6" fill="#fff" stroke="#0D3D2C" strokeWidth="2"/>
+      <polyline points="108,78 124,60 138,68 156,42 172,52" stroke="#22C55E" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="172" cy="52" r="4" fill="#22C55E"/>
+      <path d="M30 110 Q 100 130, 175 105" stroke="#FACC15" strokeWidth="3" fill="none" strokeLinecap="round" strokeDasharray="4 4"/>
+    </svg>
   );
 }
-
-function DocumentMockup() {
+function BrandingIllustration() {
   return (
-    <div className="relative">
-      {/* Document mockup with slight tilt */}
-      <div className="transform rotate-1 rounded-xl border border-gray-200 bg-white shadow-md transition-transform duration-300 group-hover:rotate-0">
-        {/* PDF header */}
-        <div className="flex items-center gap-2 border-b border-gray-100 px-4 py-3">
-          <div className="flex gap-1.5">
-            <div className="h-3 w-3 rounded-full bg-red-400" />
-            <div className="h-3 w-3 rounded-full bg-yellow-400" />
-            <div className="h-3 w-3 rounded-full bg-green-400" />
-          </div>
-          <div className="ml-2 flex-1 rounded bg-gray-50 px-2 py-1">
-            <div className="h-1.5 w-20 rounded bg-gray-200" />
-          </div>
-        </div>
-        {/* PDF content */}
-        <div className="space-y-2 p-4">
-          <div className="flex items-center justify-between">
-            <div className="h-2 w-24 rounded bg-gray-900" />
-            <div className="h-2 w-12 rounded bg-gray-200" />
-          </div>
-          <div className="h-2 w-full rounded bg-gray-100" />
-          <div className="h-2 w-4/5 rounded bg-gray-100" />
-          <div className="h-2 w-3/5 rounded bg-gray-100" />
-          <div className="mt-3 grid grid-cols-2 gap-2">
-            <div className="rounded bg-primary/10 p-2">
-              <div className="h-1.5 w-16 rounded bg-primary/30" />
-              <div className="mt-2 h-1 w-full rounded bg-gray-200" />
-              <div className="mt-1 h-1 w-3/4 rounded bg-gray-200" />
-            </div>
-            <div className="rounded bg-gray-50 p-2">
-              <div className="h-1.5 w-14 rounded bg-gray-300" />
-              <div className="mt-2 h-1 w-full rounded bg-gray-200" />
-              <div className="mt-1 h-1 w-4/5 rounded bg-gray-200" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <svg viewBox="0 0 200 140" className="h-32 w-auto">
+      <circle cx="55" cy="70" r="32" fill="#0D3D2C" />
+      <circle cx="42" cy="60" r="7" fill="#22C55E" />
+      <circle cx="62" cy="55" r="7" fill="#FACC15" />
+      <circle cx="72" cy="72" r="7" fill="#60A5FA" />
+      <circle cx="58" cy="86" r="7" fill="#F0FDF4" />
+      <text x="115" y="60" fontFamily="serif" fontSize="32" fontWeight="900" fill="#0D3D2C" fontStyle="italic">Aa</text>
+      <rect x="115" y="78" width="60" height="6" rx="3" fill="#22C55E"/>
+      <rect x="115" y="92" width="40" height="6" rx="3" fill="#FACC15"/>
+    </svg>
   );
 }
-
-function CopyMockup() {
+function SiteIllustration() {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-md">
-      {/* Header */}
-      <div className="border-b border-gray-100 px-4 py-2">
-        <span className="text-[10px] font-bold uppercase tracking-wider text-primary">Preview</span>
-      </div>
-      {/* Copy blocks */}
-      <div className="space-y-3 p-4">
-        <div className="rounded-lg bg-gray-900 px-3 py-2">
-          <span className="text-sm font-semibold text-white">Headline Principal</span>
-        </div>
-        <div className="rounded-lg bg-gray-100 px-3 py-1.5">
-          <span className="text-xs text-gray-600">Subheadline explicativa...</span>
-        </div>
-        <div className="flex gap-2">
-          <div className="rounded-md bg-primary px-3 py-2">
-            <span className="text-xs font-semibold text-white">CTA Principal</span>
-          </div>
-          <div className="rounded-md border border-gray-300 px-3 py-2">
-            <span className="text-xs font-medium text-gray-600">CTA Secundário</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function PageMockup() {
-  return (
-    <div className="relative">
-      {/* Browser frame */}
-      <div className="rounded-t-xl border border-gray-200 border-b-0 bg-gray-50">
-        <div className="flex items-center gap-2 border-b border-gray-200 px-3 py-2">
-          <div className="flex gap-1.5">
-            <div className="h-2.5 w-2.5 rounded-full bg-red-400" />
-            <div className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
-            <div className="h-2.5 w-2.5 rounded-full bg-green-400" />
-          </div>
-          <div className="mx-auto h-2.5 max-w-[60%] rounded bg-gray-200" />
-        </div>
-      </div>
-      {/* Page content */}
-      <div className="rounded-b-xl border border-t-0 border-gray-200 bg-gradient-to-br from-gray-900 to-gray-800 p-4 shadow-md">
-        <div className="space-y-2">
-          <div className="h-2 w-1/2 rounded bg-white/90" />
-          <div className="h-1.5 w-3/4 rounded bg-white/60" />
-          <div className="flex gap-2">
-            <div className="h-5 w-16 rounded bg-white" />
-            <div className="h-5 w-20 rounded border border-white/40" />
-          </div>
-        </div>
-        {/* Glow effect */}
-        <div className="absolute -bottom-2 -right-2 h-16 w-16 rounded-full bg-primary/20 blur-2xl" />
-      </div>
-    </div>
+    <svg viewBox="0 0 200 140" className="h-32 w-auto">
+      <rect x="20" y="20" width="160" height="100" rx="8" fill="#0A0F0D"/>
+      <circle cx="30" cy="30" r="2.5" fill="#FACC15"/>
+      <circle cx="38" cy="30" r="2.5" fill="#22C55E"/>
+      <circle cx="46" cy="30" r="2.5" fill="#60A5FA"/>
+      <rect x="30" y="44" width="80" height="8" rx="4" fill="#22C55E"/>
+      <rect x="30" y="58" width="100" height="4" rx="2" fill="#fff" opacity="0.4"/>
+      <rect x="30" y="68" width="70" height="4" rx="2" fill="#fff" opacity="0.4"/>
+      <rect x="30" y="84" width="50" height="20" rx="10" fill="#22C55E"/>
+      <rect x="120" y="60" width="50" height="44" rx="6" fill="#166534"/>
+      <polyline points="128,96 140,82 150,88 162,72" stroke="#22C55E" strokeWidth="2.5" fill="none"/>
+    </svg>
   );
 }

@@ -1,83 +1,84 @@
-import { Button } from "@/components/ui/button";
-import { openInstagram } from "@/lib/contact";
-import heroImg from "@/assets/hero-pachecotech.jpg";
+import { INSTAGRAM_URL } from "@/lib/contact";
+import heroImg from "@/assets/hero-results.png";
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden bg-gradient-hero pt-28 pb-20 text-white sm:pt-36 sm:pb-28"
-    >
-      {/* glow accents */}
-      <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-white/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 h-[600px] w-[600px] rounded-full bg-green-500/20 blur-3xl" />
+    <section id="top" className="relative overflow-hidden bg-ink pt-32 pb-20 text-white sm:pt-40 sm:pb-28">
+      {/* glowing blobs */}
+      <div className="pointer-events-none absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-brand-neon/20 blur-3xl animate-blob" />
+      <div className="pointer-events-none absolute top-1/3 -right-40 h-[600px] w-[600px] rounded-full bg-brand-mid/30 blur-3xl animate-blob" />
+      <div className="pointer-events-none absolute inset-0 bg-radial-glow opacity-60" />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+      {/* Decorative SVG squiggles */}
+      <svg aria-hidden className="pointer-events-none absolute left-8 top-28 hidden lg:block opacity-60" width="80" height="40" viewBox="0 0 80 40" fill="none">
+        <path d="M2 20 Q 12 2, 22 20 T 42 20 T 62 20 T 78 20" stroke="#FACC15" strokeWidth="2.5" strokeLinecap="round"/>
+      </svg>
+      <svg aria-hidden className="pointer-events-none absolute right-12 top-36 hidden lg:block" width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <path d="M20 4 L23 17 L36 20 L23 23 L20 36 L17 23 L4 20 L17 17 Z" fill="#22C55E"/>
+      </svg>
+
+      <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
         <div className="animate-fade-up">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-            Processo validado na prática
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-neon/30 bg-brand-neon/10 px-3.5 py-1.5 text-xs font-medium text-brand-neon">
+            <span className="h-2 w-2 rounded-full bg-brand-neon animate-pulse" />
+            Especialista em Conversão Digital
           </span>
-          <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Seu site não está trazendo clientes.{" "}
-            <span className="text-white/80">Eu resolvo isso com estratégia.</span>
+
+          <h1 className="mt-6 font-display text-5xl font-black leading-[1.02] tracking-tight sm:text-6xl lg:text-[68px]">
+            Seu negócio merece um site que{" "}
+            <span className="relative italic font-medium text-brand-neon">
+              realmente
+              <svg aria-hidden className="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
+                <path d="M3 9 Q 50 1, 100 7 T 197 6" stroke="#FACC15" strokeWidth="3" fill="none" strokeLinecap="round"/>
+              </svg>
+            </span>{" "}
+            vende.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
-            Antes de construir qualquer coisa, eu entendo o seu negócio.
-            Depois executo com foco claro: <strong className="text-white">resultados.</strong>
+
+          <p className="mt-7 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
+            Marketing estratégico, identidade de marca e site profissional — tudo junto, para pequenos negócios que querem crescer de verdade.
           </p>
-          
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-              className="h-12 bg-white px-6 text-base font-semibold text-primary hover:bg-white/90"
-            >
-              <a href="#processo">Ver como funciona</a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="h-12 border-white/40 bg-transparent px-6 text-base font-semibold text-white hover:bg-white/10 hover:text-white"
-              onClick={openInstagram}
-            >
-              <a href="#" onClick={(e) => { e.preventDefault(); openInstagram(); }}>
-                Falar no Instagram
-              </a>
-            </Button>
+
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand-neon px-7 text-base font-semibold text-ink transition-all hover:scale-[1.03] hover:shadow-neon">
+              Quero meu site <span aria-hidden>→</span>
+            </a>
+            <a href="#processo"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10">
+              Ver como funciona
+            </a>
           </div>
-          
-          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/75">
-            <Stat label="Diagnóstico estratégico" />
-            <Stat label="Copy de conversão" />
-            <Stat label="Entrega rápida" />
+
+          <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-white/60">
+            <span className="font-script text-2xl text-brand-yellow">↗ tudo incluso</span>
+            <Stat>🎯 Briefing estratégico</Stat>
+            <Stat>⚡ Entrega em dias</Stat>
+            <Stat>📈 Foco em conversão</Stat>
           </div>
         </div>
 
         <div className="relative animate-fade-up [animation-delay:120ms]">
-          <div className="absolute -inset-4 rounded-3xl bg-white/10 blur-2xl" />
-          <div className="relative overflow-hidden rounded-2xl border border-white/15 shadow-elegant ring-1 ring-white/10">
-            <img
-              src={heroImg}
-              alt="Profissional analisando estratégia digital no laptop"
-              width={1024}
-              height={1024}
-              className="h-full w-full object-cover"
-            />
+          <div className="absolute -inset-6 rounded-[2rem] bg-brand-neon/20 blur-3xl" />
+          {/* Browser frame mockup */}
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-ink-soft shadow-elegant">
+            <div className="flex items-center gap-1.5 border-b border-white/10 bg-black/40 px-4 py-3">
+              <span className="h-3 w-3 rounded-full bg-red-400/80" />
+              <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
+              <span className="h-3 w-3 rounded-full bg-green-400/80" />
+              <span className="ml-3 text-xs text-white/40">pachecotech.com</span>
+            </div>
+            <img src={heroImg} alt="Time comemorando resultados em dashboard de vendas" className="aspect-[16/10] w-full object-cover" />
           </div>
-          {/* floating cards */}
-          <div className="absolute -bottom-6 -left-4 hidden rounded-xl border border-white/15 bg-white/95 px-4 py-3 text-foreground shadow-elegant backdrop-blur sm:block">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
-              Resultado projetado
-            </p>
-            <p className="mt-0.5 text-sm font-bold">Potencial de geração de contatos</p>
+
+          {/* Floating cards */}
+          <div className="absolute -left-4 -bottom-6 hidden rounded-2xl border border-white/10 bg-ink-soft/90 px-4 py-3 shadow-elegant backdrop-blur sm:block">
+            <p className="text-xs text-brand-neon font-semibold">📈 Foco em conversão</p>
+            <p className="mt-0.5 text-sm font-bold text-white">+ contatos qualificados</p>
           </div>
-          <div className="absolute -top-4 -right-4 hidden rounded-xl border border-white/15 bg-white/95 px-4 py-3 text-foreground shadow-elegant backdrop-blur sm:block">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
-              Foco
-            </p>
-            <p className="mt-0.5 text-sm font-bold">Conversão de clientes</p>
+          <div className="absolute -right-4 -top-4 hidden rotate-3 rounded-2xl border border-white/10 bg-ink-soft/90 px-4 py-3 shadow-elegant backdrop-blur sm:block">
+            <p className="font-script text-xl text-brand-yellow leading-none">você aqui</p>
+            <p className="font-script text-xl text-brand-yellow leading-none">em breve ↗</p>
           </div>
         </div>
       </div>
@@ -85,17 +86,6 @@ export function Hero() {
   );
 }
 
-function Stat({ label }: { label: string }) {
-  return (
-    <div className="flex items-center gap-2">
-      <svg className="h-4 w-4 text-emerald-300" viewBox="0 0 20 20" fill="currentColor">
-        <path
-          fillRule="evenodd"
-          d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z"
-          clipRule="evenodd"
-        />
-      </svg>
-      {label}
-    </div>
-  );
+function Stat({ children }: { children: React.ReactNode }) {
+  return <span className="inline-flex items-center gap-1.5">{children}</span>;
 }

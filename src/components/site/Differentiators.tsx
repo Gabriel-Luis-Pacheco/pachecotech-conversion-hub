@@ -1,91 +1,38 @@
-import { SectionHeader } from "./Process";
-
 const items = [
-  {
-    title: "Estratégia antes do design",
-    desc: "Nada é construído sem antes entender o negócio, o público e a concorrência.",
-    icon: BrainIcon,
-  },
-  {
-    title: "Processo transparente",
-    desc: "Você sabe o que está sendo entregue em cada etapa — sem caixa-preta.",
-    icon: EyeIcon,
-  },
-  {
-    title: "Execução rápida",
-    desc: "Ciclo enxuto: diagnóstico, decisão, construção e entrega sem fricção.",
-    icon: BoltIcon,
-  },
-  {
-    title: "Foco em resultados",
-    desc: "Métrica que importa: contato, conversa e cliente. Não 'site bonito'.",
-    icon: TargetIcon,
-  },
+  { icon: "🧠", title: "Estratégia antes do design", desc: "Briefing profundo. Cada decisão visual tem motivo de negócio." },
+  { icon: "🎯", title: "Foco em conversão", desc: "Copy, estrutura e CTAs pensados para gerar contatos reais." },
+  { icon: "⚡", title: "Entrega rápida", desc: "Em dias, não semanas. Processo enxuto e direto ao ponto." },
+  { icon: "🔍", title: "Processo transparente", desc: "Você acompanha cada etapa. Sem caixa-preta, sem mistério." },
 ];
 
 export function Differentiators() {
   return (
-<section className="bg-[#0F172A] py-20 sm:py-28">
+    <section className="relative bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeader
-          eyebrow="Diferenciais"
-          title="Por que esse processo entrega mais"
-          light
-        />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="max-w-2xl">
+          <span className="font-script text-2xl text-brand-mid">por que comigo →</span>
+          <h2 className="mt-2 font-display text-4xl font-black tracking-tight text-ink sm:text-5xl">
+            O que agências fazem em <em className="text-brand-mid">semanas</em>, comprimo em um sistema rápido.
+          </h2>
+        </div>
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {items.map((it) => (
-            <div
-              key={it.title}
-              className="rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <it.icon />
-              </div>
-              <h3 className="mt-5 text-base font-bold">{it.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
+            <div key={it.title} className="group rounded-3xl border border-black/5 bg-cream p-7 transition-all hover:scale-[1.02] hover:shadow-elegant">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-neon text-2xl shadow-neon">{it.icon}</div>
+              <h3 className="mt-5 font-display text-xl font-bold text-ink">{it.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/70">{it.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-14 overflow-hidden rounded-2xl bg-gradient-hero p-8 text-center shadow-elegant sm:p-12">
-          <p className="mx-auto max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl">
-            "O que agências entregam em semanas, esse processo comprime em um sistema mais rápido e
-            eficiente."
+        <div className="mt-12 rounded-3xl bg-brand-dark p-8 sm:p-12 text-white relative overflow-hidden">
+          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-neon/20 blur-3xl" />
+          <p className="relative font-display text-2xl italic leading-snug sm:text-3xl">
+            "Sites bonitos são fáceis. Sites que <span className="text-brand-neon not-italic font-bold">trazem clientes</span> exigem estratégia. É exatamente isso que entrego."
           </p>
         </div>
       </div>
     </section>
-  );
-}
-
-function BrainIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9 3a3 3 0 00-3 3v1a3 3 0 00-3 3 3 3 0 002 2.8V14a3 3 0 003 3 3 3 0 003 3 3 3 0 003-3 3 3 0 003-3v-1.2A3 3 0 0021 10a3 3 0 00-3-3V6a3 3 0 00-3-3 3 3 0 00-3 1 3 3 0 00-3-1z"/>
-    </svg>
-  );
-}
-function EyeIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>
-      <circle cx="12" cy="12" r="3"/>
-    </svg>
-  );
-}
-function BoltIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/>
-    </svg>
-  );
-}
-function TargetIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="9"/>
-      <circle cx="12" cy="12" r="5"/>
-      <circle cx="12" cy="12" r="1.5"/>
-    </svg>
   );
 }
