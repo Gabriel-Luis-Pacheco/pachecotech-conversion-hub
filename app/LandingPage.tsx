@@ -23,13 +23,15 @@ import {
   Check,
   ChevronDown,
   CircleHelp,
-  CreditCard,
+  Code2,
   FolderGit2,
   Handshake,
+  Hash,
   Layers3,
-  LockKeyhole,
   Menu,
+  MessageCircle,
   MessagesSquare,
+  Network,
   Radio,
   Rocket,
   ShieldCheck,
@@ -37,115 +39,101 @@ import {
   X,
 } from "lucide-react";
 
-export const CHECKOUT_URL = "https://pay.kiwify.com.br/SEyfpDy";
+export const WHATSAPP_URL =
+  "https://chat.whatsapp.com/GxaDRr8NWmYGsbYmjp7vCN?s=sh&p=i&ilr=2&amv=1";
+export const DISCORD_URL = "https://discord.gg/9vxmxCFkDq";
 
 const OrbCanvas = dynamic(() => import("./OrbCanvas"), { ssr: false });
 
 const navItems = [
   { label: "A comunidade", href: "#comunidade" },
-  { label: "O que inclui", href: "#beneficios" },
+  { label: "O que você encontra", href: "#beneficios" },
   { label: "Como funciona", href: "#como-funciona" },
-  { label: "Investimento", href: "#investimento" },
+  { label: "Canais", href: "#canais" },
   { label: "Dúvidas", href: "#duvidas" },
 ];
 
-const included = [
+const benefits = [
   {
-    title: "Uma comunidade que participa",
-    text: "Um espaço privado para perguntar, compartilhar avanços e continuar em movimento.",
+    title: "Troca com pessoas da área",
+    text: "Converse com quem também estuda, trabalha ou está construindo uma trajetória em tecnologia.",
     icon: UsersRound,
   },
   {
-    title: "Dúvidas com contexto",
-    text: "Converse sobre o que travou e encontre caminhos mais claros para avançar.",
+    title: "Dúvidas e aprendizado coletivo",
+    text: "Compartilhe o contexto do que travou e encontre caminhos para continuar aprendendo.",
     icon: CircleHelp,
   },
   {
-    title: "Projetos e prática",
-    text: "Tire ideias do papel, mostre o que está construindo e aprenda fazendo.",
+    title: "Projetos com feedback",
+    text: "Mostre o que está criando, registre avanços e receba sugestões úteis da comunidade.",
     icon: FolderGit2,
   },
   {
-    title: "Conteúdo selecionado",
-    text: "Curadoria para reduzir o ruído e concentrar sua atenção no que importa.",
+    title: "Conteúdo e avisos importantes",
+    text: "Acompanhe materiais, novidades do canal, cursos e referências selecionadas.",
     icon: BookOpenCheck,
   },
   {
-    title: "Palestras e encontros",
-    text: "Conversas para ampliar repertório, trocar experiências e descobrir novas rotas.",
+    title: "Iniciativas que aproximam",
+    text: "Participe de desafios, encontros, oportunidades e outras ações que surgirem no Lab.",
     icon: Radio,
   },
-  {
-    title: "Networking real",
-    text: "Conheça pessoas que também estão construindo uma trajetória em tecnologia.",
-    icon: Handshake,
-  },
-  {
-    title: "Vagas e oportunidades",
-    text: "Um canal para compartilhar oportunidades relevantes para a comunidade.",
-    icon: BriefcaseBusiness,
-  },
-];
-
-const frictionPoints = [
-  "Você estuda bastante, mas ainda pratica menos do que gostaria.",
-  "Uma dúvida simples interrompe o ritmo por horas — às vezes, por dias.",
-  "Sem troca e compromisso, manter a constância fica muito mais difícil.",
 ];
 
 const steps = [
   {
-    title: "Faça sua inscrição",
-    text: "Conclua a assinatura mensal no checkout seguro da Kiwify.",
-    icon: CreditCard,
+    title: "Escolha por onde entrar",
+    text: "Entre no WhatsApp para acompanhar o dia a dia ou no Discord para conversas organizadas por tema.",
+    icon: MessageCircle,
   },
   {
-    title: "Receba as orientações",
-    text: "Após a confirmação, você recebe as instruções para acessar os espaços.",
-    icon: LockKeyhole,
+    title: "Chegue sem burocracia",
+    text: "O acesso é gratuito. Não existe checkout, período de teste, cartão ou assinatura.",
+    icon: ShieldCheck,
   },
   {
     title: "Apresente-se",
-    text: "Conte seu momento, seus interesses e encontre os canais mais úteis para você.",
+    text: "Conte o que você estuda, no que está trabalhando e quais assuntos quer explorar.",
     icon: MessagesSquare,
   },
   {
     title: "Participe no seu ritmo",
-    text: "Pergunte, compartilhe, construa projetos e faça o conhecimento circular.",
+    text: "Faça perguntas, compartilhe projetos e contribua quando puder. A troca é o que mantém o Lab vivo.",
     icon: Rocket,
   },
 ];
 
 const faqItems = [
   {
-    question: "Preciso já saber programar?",
+    question: "A entrada é realmente gratuita?",
     answer:
-      "Não. A comunidade foi pensada tanto para quem está começando quanto para quem já estuda e quer mais direção, prática e troca com outras pessoas.",
+      "Sim. Você não precisa cadastrar cartão, iniciar teste ou contratar uma assinatura para participar do Pacheco Lab.",
   },
   {
-    question: "A Pacheco Lab. é um curso?",
+    question: "Preciso já trabalhar com tecnologia?",
     answer:
-      "Não é um curso isolado. É uma comunidade privada com canais de conversa, projetos, curadoria, encontros e oportunidades. O foco é evoluir por meio da participação contínua.",
+      "Não. A comunidade recebe tanto quem está começando quanto quem já trabalha na área e quer trocar experiências.",
   },
   {
-    question: "Onde a comunidade funciona?",
+    question: "Quais assuntos fazem parte da comunidade?",
     answer:
-      "O Discord concentra a organização, os temas e as conversas mais profundas. O WhatsApp é usado para proximidade, avisos e comunicação rápida.",
+      "Programação, dados, inteligência artificial, automação, projetos, estudos e carreira em tecnologia.",
   },
   {
-    question: "Como recebo o acesso?",
+    question: "Qual é a diferença entre WhatsApp e Discord?",
     answer:
-      "Depois da confirmação da assinatura, você recebe as orientações de entrada. Nenhum convite privado fica exposto nesta página.",
+      "O WhatsApp aproxima avisos e conversas rápidas. O Discord organiza dúvidas, projetos e assuntos técnicos em canais separados.",
   },
   {
-    question: "Posso cancelar?",
+    question: "O Pacheco Lab é um curso?",
     answer:
-      "Sim. A assinatura é mensal e recorrente. Você pode solicitar o cancelamento; o acesso permanece ativo enquanto a assinatura estiver regular.",
+      "Não. É uma comunidade ligada aos conteúdos e às iniciativas do Pacheco Lab. Materiais e cursos podem ser compartilhados, mas a proposta principal é a troca contínua.",
   },
   {
-    question: "Existe promessa de emprego ou renda?",
+    question: "Existe promessa de emprego ou resultado?",
     answer:
-      "Não. A comunidade oferece ambiente, troca e oportunidades compartilhadas, mas não promete emprego, renda ou resultados automáticos.",
+      "Não. A comunidade cria espaço para aprender, compartilhar oportunidades e conhecer pessoas, sem prometer renda, vaga ou resultado automático.",
   },
 ];
 
@@ -162,7 +150,7 @@ function HeroOrb({ reducedMotion }: { reducedMotion: boolean }) {
     );
     const timer = window.setTimeout(
       () => setCanRender(webgl && !lowPower && !reducedMotion),
-      100,
+      80,
     );
     return () => window.clearTimeout(timer);
   }, [reducedMotion]);
@@ -170,21 +158,15 @@ function HeroOrb({ reducedMotion }: { reducedMotion: boolean }) {
   return (
     <div className="orb-wrap" aria-hidden="true">
       <div className="orb-halo" />
-      <div className="orb-aurora" />
       <div className="orb-fallback">
         <span className="orb-core" />
-        <span className="orb-stream stream-one" />
-        <span className="orb-stream stream-two" />
-        <span className="orb-stream stream-three" />
         <span className="orb-ring orb-ring-one" />
         <span className="orb-ring orb-ring-two" />
         <span className="orb-ring orb-ring-three" />
-        <span className="orb-ring orb-ring-four" />
         <i className="orb-node node-a" />
         <i className="orb-node node-b" />
         <i className="orb-node node-c" />
         <i className="orb-node node-d" />
-        <i className="orb-node node-e" />
       </div>
       {canRender && (
         <div className="orb-canvas">
@@ -195,20 +177,25 @@ function HeroOrb({ reducedMotion }: { reducedMotion: boolean }) {
   );
 }
 
-function CheckoutButton({
+function JoinLink({
   children,
+  href = WHATSAPP_URL,
+  variant = "primary",
   className = "",
 }: {
   children: React.ReactNode;
+  href?: string;
+  variant?: "primary" | "secondary" | "quiet";
   className?: string;
 }) {
   return (
     <motion.a
-      href={CHECKOUT_URL}
-      className={`button button-primary ${className}`}
-      whileHover={{ y: -3 }}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={`button button-${variant} ${className}`}
+      whileHover={{ y: -2 }}
       whileTap={{ scale: 0.985 }}
-      aria-label={`${String(children)} — abrir checkout seguro da Kiwify`}
     >
       <span>{children}</span>
       <ArrowUpRight size={18} aria-hidden="true" />
@@ -219,8 +206,6 @@ function CheckoutButton({
 export default function LandingPage() {
   const root = useRef<HTMLDivElement>(null);
   const progress = useRef<HTMLDivElement>(null);
-  const cursor = useRef<HTMLDivElement>(null);
-  const cursorGlow = useRef<HTMLDivElement>(null);
   const menuButton = useRef<HTMLButtonElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -231,12 +216,12 @@ export default function LandingPage() {
 
   const particles = useMemo(
     () =>
-      Array.from({ length: 30 }, (_, index) => ({
-        left: `${(index * 37 + 11) % 100}%`,
-        top: `${(index * 53 + 7) % 100}%`,
-        size: `${1 + (index % 3)}px`,
-        delay: `${-((index * 0.43) % 9)}s`,
-        duration: `${9 + (index % 7)}s`,
+      Array.from({ length: 18 }, (_, index) => ({
+        left: `${(index * 41 + 7) % 100}%`,
+        top: `${(index * 59 + 13) % 100}%`,
+        size: `${1 + (index % 2)}px`,
+        delay: `${-((index * 0.47) % 8)}s`,
+        duration: `${11 + (index % 6)}s`,
       })),
     [],
   );
@@ -253,14 +238,12 @@ export default function LandingPage() {
     const onScroll = () => {
       const doc = document.documentElement;
       const total = Math.max(doc.scrollHeight - window.innerHeight, 1);
-      setScrolled(window.scrollY > 40);
-      if (window.scrollY < window.innerHeight * 0.5) {
-        setActiveSection("");
-      }
+      setScrolled(window.scrollY > 32);
       setShowMobileCta(
-        window.scrollY > Math.min(680, window.innerHeight * 0.78) &&
-          window.scrollY < total - 420,
+        window.scrollY > Math.min(640, window.innerHeight * 0.78) &&
+          window.scrollY < total - 360,
       );
+      if (window.scrollY < window.innerHeight * 0.45) setActiveSection("");
       if (progress.current) {
         progress.current.style.transform = `scaleX(${window.scrollY / total})`;
       }
@@ -272,7 +255,7 @@ export default function LandingPage() {
 
   useEffect(() => {
     const visibleAreas = new Set<Element>();
-    const elements = [".sales-break", "#para-quem", "#investimento", ".final-cta-section"]
+    const elements = ["#acesso-gratuito", ".final-cta-section"]
       .map((selector) => document.querySelector(selector))
       .filter(Boolean) as Element[];
     const observer = new IntersectionObserver(
@@ -283,7 +266,7 @@ export default function LandingPage() {
         });
         setDecisionAreaVisible(visibleAreas.size > 0);
       },
-      { threshold: 0.02 },
+      { threshold: 0.08 },
     );
     elements.forEach((element) => observer.observe(element));
     return () => observer.disconnect();
@@ -299,7 +282,7 @@ export default function LandingPage() {
           if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
-      { rootMargin: "-36% 0px -52%", threshold: 0 },
+      { rootMargin: "-34% 0px -56%", threshold: 0 },
     );
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
@@ -320,61 +303,35 @@ export default function LandingPage() {
     };
   }, [mobileOpen]);
 
-  useEffect(() => {
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-    if (!finePointer || reducedMotion) return;
-    let frame = 0;
-    const onPointerMove = (event: PointerEvent) => {
-      window.cancelAnimationFrame(frame);
-      frame = window.requestAnimationFrame(() => {
-        cursor.current?.style.setProperty(
-          "transform",
-          `translate3d(${event.clientX}px, ${event.clientY}px, 0)`,
-        );
-        cursorGlow.current?.style.setProperty(
-          "transform",
-          `translate3d(${event.clientX}px, ${event.clientY}px, 0)`,
-        );
-      });
-    };
-    window.addEventListener("pointermove", onPointerMove, { passive: true });
-    return () => {
-      window.cancelAnimationFrame(frame);
-      window.removeEventListener("pointermove", onPointerMove);
-    };
-  }, [reducedMotion]);
-
   useLayoutEffect(() => {
     if (!root.current) return;
     gsap.registerPlugin(ScrollTrigger);
     const context = gsap.context(() => {
-      const compactViewport = window.matchMedia("(max-width: 620px)").matches;
       if (reducedMotion) {
         gsap.set(
-          ".hero-kicker, .hero-line span, .hero-copy, .hero-offer, .hero-actions, .hero-trust, .reveal, .included-item, .channel-row",
-          { clearProps: "all", opacity: 1, y: 0, scale: 1 },
+          ".hero-kicker, .hero-line span, .hero-copy, .hero-actions, .hero-trust, .reveal, .benefit-row, .step",
+          { clearProps: "all", opacity: 1, y: 0 },
         );
         return;
       }
 
       const intro = gsap.timeline({ defaults: { ease: "expo.out" } });
       intro
-        .fromTo(".hero-kicker", { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45 })
+        .fromTo(".hero-kicker", { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.42 })
         .fromTo(
           ".hero-line span",
-          { yPercent: 112 },
-          { yPercent: 0, duration: 0.9, stagger: 0.1 },
-          "-=0.2",
+          { yPercent: 108 },
+          { yPercent: 0, duration: 0.88, stagger: 0.08 },
+          "-=0.18",
         )
-        .fromTo(".hero-copy", { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, "-=0.48")
-        .fromTo(".hero-offer", { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, "-=0.38")
-        .fromTo(".hero-actions", { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, "-=0.35")
-        .fromTo(".hero-trust", { opacity: 0 }, { opacity: 1, duration: 0.5 }, "-=0.2");
+        .fromTo(".hero-copy", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55 }, "-=0.46")
+        .fromTo(".hero-actions", { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, "-=0.36")
+        .fromTo(".hero-trust", { opacity: 0 }, { opacity: 1, duration: 0.45 }, "-=0.2");
 
       gsap.to(".orb-wrap", {
-        y: 105,
-        scale: 1.12,
-        opacity: 0.68,
+        y: 74,
+        scale: 1.06,
+        opacity: 0.72,
         ease: "none",
         scrollTrigger: {
           trigger: "#hero",
@@ -387,16 +344,10 @@ export default function LandingPage() {
       gsap.utils.toArray<HTMLElement>(".reveal").forEach((element) => {
         gsap.fromTo(
           element,
-          {
-            y: compactViewport ? 18 : 28,
-            opacity: 0,
-            filter: compactViewport ? "none" : "blur(6px)",
-          },
+          { y: 24 },
           {
             y: 0,
-            opacity: 1,
-            filter: compactViewport ? "none" : "blur(0px)",
-            duration: 0.8,
+            duration: 0.72,
             ease: "quart.out",
             scrollTrigger: { trigger: element, start: "top 88%", once: true },
           },
@@ -404,27 +355,14 @@ export default function LandingPage() {
       });
 
       gsap.fromTo(
-        ".included-item",
-        { x: 24, opacity: 0 },
+        ".benefit-row",
+        { x: 20 },
         {
           x: 0,
-          opacity: 1,
-          duration: 0.55,
-          stagger: 0.06,
+          duration: 0.5,
+          stagger: 0.055,
           ease: "quart.out",
-          scrollTrigger: { trigger: ".included-list", start: "top 82%", once: true },
-        },
-      );
-
-      gsap.fromTo(
-        ".channel-row",
-        { x: -16, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.05,
-          scrollTrigger: { trigger: ".community-window", start: "top 78%", once: true },
+          scrollTrigger: { trigger: ".benefits-list", start: "top 82%", once: true },
         },
       );
 
@@ -452,8 +390,6 @@ export default function LandingPage() {
     <div ref={root} className="site-shell">
       <a className="skip-link" href="#main">Pular para o conteúdo</a>
       <div ref={progress} className="scroll-progress" aria-hidden="true" />
-      <div ref={cursorGlow} className="cursor-glow" aria-hidden="true" />
-      <div ref={cursor} className="cursor-dot" aria-hidden="true" />
 
       <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
         <a className="brand" href="#hero" aria-label="Pacheco Lab. — início">
@@ -477,8 +413,13 @@ export default function LandingPage() {
         </nav>
 
         <div className="header-actions">
-          <a className="header-cta" href={CHECKOUT_URL}>
-            Quero entrar <ArrowUpRight size={15} aria-hidden="true" />
+          <a
+            className="header-cta"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Entrar grátis <ArrowUpRight size={15} aria-hidden="true" />
           </a>
           <button
             ref={menuButton}
@@ -497,9 +438,9 @@ export default function LandingPage() {
           {mobileOpen && (
             <motion.div
               className="mobile-menu-layer"
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.18 }}
             >
               <button
@@ -542,7 +483,8 @@ export default function LandingPage() {
                     </a>
                   ))}
                 </nav>
-                <CheckoutButton>Quero entrar na comunidade</CheckoutButton>
+                <JoinLink>Entrar gratuitamente</JoinLink>
+                <JoinLink href={DISCORD_URL} variant="secondary">Entrar pelo Discord</JoinLink>
               </div>
             </motion.div>
           )}
@@ -572,269 +514,210 @@ export default function LandingPage() {
           <div className="container hero-layout">
             <div className="hero-content">
               <div className="hero-kicker">
-                <span /> Comunidade privada para aprender programação fazendo
+                <span /> Comunidade gratuita de tecnologia
               </div>
               <h1>
-                <span className="hero-line"><span>Aprenda programação.</span></span>
-                <span className="hero-line hero-line-accent"><span>Evolua junto.</span></span>
+                <span className="hero-line"><span>Uma comunidade gratuita</span></span>
+                <span className="hero-line"><span>para evoluir em tecnologia.</span></span>
               </h1>
               <p className="hero-copy">
-                Tire dúvidas com contexto, receba feedback nos seus projetos e mantenha
-                a constância no Discord e no WhatsApp — com pessoas que também estão aprendendo.
+                Entre no Pacheco Lab para trocar experiências, compartilhar projetos,
+                tirar dúvidas e acompanhar conteúdos sobre programação, dados,
+                automação e carreira.
               </p>
-
-              <div className="hero-offer">
-                <div className="hero-price">
-                  <span>Plano mensal</span>
-                  <strong>R$ 19,90 <small>/mês</small></strong>
-                </div>
-                <div className="hero-offer-details">
-                  <strong>Acesso completo à comunidade</strong>
-                  <p>Discord, WhatsApp, projetos, curadoria, encontros e oportunidades.</p>
-                </div>
-              </div>
 
               <div className="hero-actions">
-                <CheckoutButton>Entrar por R$ 19,90/mês</CheckoutButton>
-                <motion.a
-                  className="button button-secondary"
-                  href="#beneficios"
-                  whileHover={{ y: -3 }}
-                  whileTap={{ scale: 0.985 }}
-                >
-                  Explorar o que está incluído <ChevronDown size={17} aria-hidden="true" />
-                </motion.a>
+                <JoinLink>Entrar gratuitamente na comunidade</JoinLink>
+                <JoinLink href={DISCORD_URL} variant="secondary">Conhecer o Discord</JoinLink>
               </div>
 
-              <div className="hero-trust" aria-label="Informações de compra">
-                <span><ShieldCheck size={15} /> Checkout pela Kiwify</span>
-                <span><Check size={15} /> Cancele quando quiser</span>
-                <span><LockKeyhole size={15} /> Acesso privado</span>
+              <div className="hero-trust" aria-label="Informações sobre o acesso">
+                <span><Check size={15} /> Gratuito</span>
+                <span><ShieldCheck size={15} /> Sem cartão</span>
+                <span><UsersRound size={15} /> Sem assinatura</span>
               </div>
             </div>
-            <div className="hero-orb-space" aria-hidden="true" />
+
+            <aside className="hero-community-card reveal" aria-label="Áreas e canais da comunidade">
+              <div className="hero-community-head">
+                <span>Comunidade em movimento</span>
+                <i><span /> acesso aberto</i>
+              </div>
+              <div className="hero-community-body">
+                <div className="community-signal">
+                  <span><Code2 size={17} /> Programação</span>
+                  <span><Braces size={17} /> Dados e IA</span>
+                  <span><Network size={17} /> Automação</span>
+                  <span><BriefcaseBusiness size={17} /> Carreira</span>
+                </div>
+                <div className="hero-community-note">
+                  <MessagesSquare size={21} />
+                  <p><strong>Aprender também é conversar.</strong> Traga uma dúvida, uma ideia ou um projeto em andamento.</p>
+                </div>
+              </div>
+            </aside>
           </div>
         </section>
 
-        <section className="truth-strip" aria-label="O que você encontra">
-          <div className="container truth-strip-inner">
-            <span>Discord organizado</span><i />
-            <span>WhatsApp para ficar por perto</span><i />
-            <span>Dúvidas e projetos</span><i />
-            <span>Curadoria, encontros e oportunidades</span>
+        <section className="topic-strip" aria-label="Temas da comunidade">
+          <div className="container topic-strip-inner">
+            <span>Programação</span><i />
+            <span>Dados</span><i />
+            <span>Automação</span><i />
+            <span>Inteligência artificial</span><i />
+            <span>Projetos</span><i />
+            <span>Carreira</span>
           </div>
         </section>
 
-        <section className="section friction-section">
-          <div className="container friction-layout">
-            <div className="friction-statement reveal">
-              <p className="section-note">Conteúdo não é o problema</p>
-              <h2>Avançar sozinho é que torna tudo mais difícil.</h2>
+        <section id="comunidade" className="section manifesto-section">
+          <div className="container manifesto-layout">
+            <div className="manifesto-marker reveal" aria-hidden="true">
+              <span>P/L</span>
+              <i />
+            </div>
+            <div className="manifesto-copy reveal">
+              <h2>Tecnologia fica melhor quando o conhecimento circula.</h2>
               <p>
-                A internet já tem tutoriais demais. A Pacheco Lab. transforma estudo
-                solitário em conversa, prática e continuidade.
+                O Pacheco Lab conecta pessoas interessadas em aprender, construir e
+                compartilhar. Sem palco, sem promessa fácil e sem obrigação de saber tudo.
+                O ponto de partida é a curiosidade; o restante acontece na troca.
               </p>
             </div>
-            <div className="friction-list">
-              {frictionPoints.map((item, index) => (
-                <div className="friction-item reveal" key={item}>
-                  <span>0{index + 1}</span>
-                  <p>{item}</p>
-                </div>
-              ))}
+            <div className="manifesto-values reveal">
+              <span><Check size={16} /> Perguntar com contexto</span>
+              <span><Check size={16} /> Compartilhar o processo</span>
+              <span><Check size={16} /> Respeitar ritmos diferentes</span>
+              <span><Check size={16} /> Construir junto</span>
             </div>
           </div>
         </section>
 
-        <section id="comunidade" className="section circulation-section">
-          <div className="circulation-glow" aria-hidden="true" />
-          <div className="container circulation-layout">
-            <div className="circulation-copy reveal">
-              <p className="section-note">Conhecimento que circula</p>
-              <h2>Uma dúvida respondida hoje vira atalho para outra pessoa amanhã.</h2>
-              <p>
-                Perguntas, referências, projetos e oportunidades passam de pessoa para
-                pessoa. Você aprende, aplica e também ajuda a comunidade a avançar.
-              </p>
-              <div className="circulation-principles">
-                <span><Check size={16} /> Perguntar sem receio</span>
-                <span><Check size={16} /> Compartilhar o processo</span>
-                <span><Check size={16} /> Construir com outras pessoas</span>
-              </div>
+        <section id="beneficios" className="section benefits-section">
+          <div className="container benefits-layout">
+            <div className="benefits-heading reveal">
+              <p>O que você encontra</p>
+              <h2>Mais espaço para praticar. Menos ruído para acompanhar.</h2>
+              <span>
+                Benefícios concretos para quem quer manter contato com tecnologia no dia a dia.
+              </span>
             </div>
-            <div className="network-map reveal" aria-label="Áreas conectadas da comunidade">
-              <div className="network-map-core">
-                <Image src="/pacheco-lab-logo.png" alt="" width={78} height={78} aria-hidden="true" />
-                <strong>Pacheco Lab.</strong>
-              </div>
-              {[
-                "Front-end",
-                "Backend",
-                "Dados e IA",
-                "Automação",
-                "Projetos",
-                "Carreira",
-              ].map((label, index) => (
-                <span key={label} className={`map-node map-node-${index + 1}`}>
-                  <i /> {label}
-                </span>
-              ))}
-              <div className="map-orbit orbit-a" aria-hidden="true" />
-              <div className="map-orbit orbit-b" aria-hidden="true" />
+            <div className="benefits-list">
+              {benefits.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <article className="benefit-row" key={item.title}>
+                    <span className="benefit-index">0{index + 1}</span>
+                    <Icon size={21} aria-hidden="true" />
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.text}</p>
+                    </div>
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section id="beneficios" className="section included-section">
-          <div className="container">
-            <div className="included-heading reveal">
-              <div>
-                <p className="section-note">O que sua assinatura inclui</p>
-                <h2>Mais que conteúdo: um lugar para perguntar, construir e continuar.</h2>
-              </div>
-              <p>
-                Tudo fica reunido em um ambiente contínuo de conversa, prática,
-                curadoria e conexão.
-              </p>
+        <section id="canais" className="section channels-section">
+          <div className="container channels-heading reveal">
+            <div>
+              <p>Dois espaços, uma comunidade</p>
+              <h2>WhatsApp para acompanhar. Discord para aprofundar.</h2>
             </div>
+            <p>
+              Escolha o canal que combina com sua rotina ou participe dos dois. O acesso é
+              gratuito em ambos.
+            </p>
+          </div>
 
-            <div className="included-layout">
-              <article className="included-feature reveal">
-                <div className="included-feature-icon"><UsersRound size={28} /></div>
-                <div>
-                  <span>O ponto de partida</span>
-                  <h3>{included[0].title}</h3>
-                  <p>{included[0].text}</p>
-                </div>
-                <div className="feature-constellation" aria-hidden="true">
-                  <span><UsersRound size={18} /></span>
-                  <i /><i /><i /><i /><i /><i />
-                </div>
-              </article>
-
-              <div className="included-list">
-                {included.slice(1).map((item) => {
-                  const Icon = item.icon;
+          <div className="container channel-layout">
+            <article className="channel-panel whatsapp-panel reveal">
+              <header>
+                <span className="channel-icon"><MessageCircle size={22} /></span>
+                <div><h3>WhatsApp</h3><p>Proximidade, avisos e conversas rápidas.</p></div>
+                <span className="channel-status"><i /> aberto</span>
+              </header>
+              <div className="whatsapp-groups" aria-label="Grupos do WhatsApp">
+                {[
+                  ["Avisos", "Novidades e informações importantes", BellRing],
+                  ["Geral", "Conversa aberta da comunidade", MessageCircle],
+                  ["Dúvidas", "Ajuda para continuar avançando", CircleHelp],
+                  ["Apresentações", "Um espaço para chegar e se conectar", Handshake],
+                  ["Cursos", "Materiais e conteúdos para acompanhar", BookOpenCheck],
+                ].map(([title, text, Icon]) => {
+                  const GroupIcon = Icon as typeof BellRing;
                   return (
-                    <article className="included-item" key={item.title}>
-                      <Icon size={20} aria-hidden="true" />
-                      <div><h3>{item.title}</h3><p>{item.text}</p></div>
-                    </article>
+                    <div className="group-row" key={String(title)}>
+                      <span><GroupIcon size={17} /></span>
+                      <div><strong>{String(title)}</strong><small>{String(text)}</small></div>
+                    </div>
                   );
                 })}
               </div>
-            </div>
-          </div>
-        </section>
+              <JoinLink className="full-button">Entrar pelo WhatsApp</JoinLink>
+            </article>
 
-        <section className="section platform-section">
-          <div className="container platform-layout">
-            <div className="platform-copy reveal">
-              <p className="section-note">Cada conversa no lugar certo</p>
-              <h2>Discord para construir. WhatsApp para acompanhar.</h2>
-              <p>
-                No Discord, dúvidas, projetos e referências ficam organizados por assunto.
-                No WhatsApp, avisos e conversas rápidas mantêm você por perto sem misturar tudo.
-              </p>
-              <ul>
-                <li><MessagesSquare size={18} /> Dúvidas com contexto e histórico</li>
-                <li><Layers3 size={18} /> Canais para projetos, stacks e oportunidades</li>
-                <li><BellRing size={18} /> Avisos essenciais, sem depender do algoritmo</li>
-              </ul>
-            </div>
-
-            <div className="community-window reveal" aria-label="Exemplo ilustrativo de uma conversa na comunidade">
-              <aside className="channel-sidebar">
-                <div className="window-brand">
-                  <Image src="/pacheco-lab-logo.png" alt="" width={30} height={30} aria-hidden="true" />
-                  Pacheco Lab.
+            <article className="channel-panel discord-panel reveal">
+              <header>
+                <span className="channel-icon"><Hash size={22} /></span>
+                <div><h3>Discord</h3><p>Organização por temas e conversas com contexto.</p></div>
+                <span className="channel-status"><i /> aberto</span>
+              </header>
+              <div className="discord-window" aria-label="Exemplo ilustrativo de conversa no Discord">
+                <div className="discord-sidebar">
+                  <span>Canais</span>
+                  {[
+                    "apresentações",
+                    "dúvidas",
+                    "projetos",
+                    "front-end",
+                    "backend",
+                    "dados-e-ia",
+                  ].map((channel) => (
+                    <small className={channel === "projetos" ? "active" : ""} key={channel}>
+                      # {channel}
+                    </small>
+                  ))}
                 </div>
-                <span className="channel-group">Comunidade</span>
-                {["Apresentações", "Dúvidas", "Projetos", "Front-end", "Backend", "Dados e IA", "Vagas"].map(
-                  (channel, index) => (
-                    <div className={`channel-row ${index === 2 ? "selected" : ""}`} key={channel}>
-                      <span>#</span> {channel}
-                    </div>
-                  ),
-                )}
-              </aside>
-              <div className="conversation-space">
-                <div className="conversation-header">
-                  <div><span># projetos</span><small>Mostre o que está construindo</small></div>
-                  <strong><i /> Exemplo ilustrativo</strong>
-                </div>
-                <div className="conversation-canvas">
-                  <div className="channel-intro">
-                    <span><FolderGit2 size={18} /></span>
-                    <div>
-                      <strong>Bem-vindo a #projetos</strong>
-                      <p>Compartilhe seu progresso, peça feedback e destrave o próximo passo.</p>
-                    </div>
+                <div className="discord-conversation">
+                  <span># projetos <small>exemplo ilustrativo</small></span>
+                  <div className="generic-message">
+                    <i>PI</i>
+                    <p><strong>Pessoa iniciante</strong>Estou organizando meu primeiro projeto. Como vocês dividiriam as etapas?</p>
                   </div>
-
-                  <div className="chat-thread">
-                    <article className="chat-message">
-                      <div className="chat-avatar avatar-violet" aria-hidden="true">AM</div>
-                      <div className="chat-message-body">
-                        <header><strong>Ana M.</strong><time dateTime="10:42">10:42</time></header>
-                        <p>Terminei a primeira versão do meu portfólio. Alguém pode me ajudar com o grid no celular?</p>
-                      </div>
-                    </article>
-
-                    <article className="chat-message">
-                      <div className="chat-avatar avatar-blue" aria-hidden="true">RC</div>
-                      <div className="chat-message-body">
-                        <header><strong>Rafael C.</strong><time dateTime="10:47">10:47</time></header>
-                        <p><span className="chat-mention">@Ana M.</span> Claro. Troque a largura fixa por uma grade responsiva e teste a partir de 320 px.</p>
-                        <div className="code-share">
-                          <div><Braces size={15} /><span>layout.css</span><small>exemplo</small></div>
-                          <code>repeat(auto-fit, minmax(16rem, 1fr))</code>
-                        </div>
-                      </div>
-                    </article>
-
-                    <article className="chat-message chat-message-success">
-                      <div className="chat-avatar avatar-green" aria-hidden="true">AM</div>
-                      <div className="chat-message-body">
-                        <header><strong>Ana M.</strong><time dateTime="11:03">11:03</time></header>
-                        <p>Funcionou! Agora os cards quebram certinho. Obrigada pela ajuda.</p>
-                      </div>
-                    </article>
+                  <div className="generic-message">
+                    <i>MC</i>
+                    <p><strong>Membro da comunidade</strong>Comece pelo problema que quer resolver e faça uma primeira versão pequena. Posso olhar seu README.</p>
                   </div>
-
-                  <div className="chat-composer" aria-hidden="true">
-                    <span>Conversar em #projetos</span>
-                    <i>+</i>
+                  <div className="generic-message compact">
+                    <i>PL</i>
+                    <p><strong>Pacheco Lab.</strong>Compartilhe o repositório quando estiver confortável. Feedback faz parte do processo.</p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="sales-break">
-          <div className="container sales-break-inner reveal">
-            <div>
-              <span>Seu próximo projeto não precisa começar no escuro.</span>
-              <strong>Entre, apresente-se e encontre seu próximo passo.</strong>
-            </div>
-            <CheckoutButton>Quero fazer parte</CheckoutButton>
+              <JoinLink href={DISCORD_URL} variant="secondary" className="full-button">Entrar pelo Discord</JoinLink>
+            </article>
           </div>
         </section>
 
         <section id="como-funciona" className="section how-section">
           <div className="container how-layout">
             <div className="how-copy reveal">
-              <p className="section-note">Entrada simples e segura</p>
-              <h2>Da inscrição à primeira conversa em quatro passos.</h2>
-              <p>Sem convite exposto, sem processo confuso e sem promessa exagerada.</p>
+              <p>Como funciona</p>
+              <h2>Entrar é simples. Participar continua sendo escolha sua.</h2>
+              <span>
+                A comunidade existe para acompanhar sua trajetória, não para ocupar mais uma tela na sua rotina.
+              </span>
             </div>
             <div className="steps">
-              <span className="story-line" aria-hidden="true"><i className="story-line-fill" /></span>
+              <div className="story-line" aria-hidden="true"><span className="story-line-fill" /></div>
               {steps.map((step, index) => {
                 const Icon = step.icon;
                 return (
-                  <article className="step reveal" key={step.title}>
+                  <article className="step" key={step.title}>
                     <span className="step-number">0{index + 1}</span>
                     <Icon size={21} aria-hidden="true" />
                     <div><h3>{step.title}</h3><p>{step.text}</p></div>
@@ -845,94 +728,50 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="para-quem" className="section fit-section">
-          <div className="container">
-            <div className="fit-heading reveal">
-              <h2>Você não precisa chegar pronto.</h2>
-              <div>
-                <strong>Precisa chegar disposto a participar.</strong>
-                <p>
-                  A comunidade funciona melhor para quem troca experiências, pratica
-                  e contribui com o progresso das outras pessoas.
-                </p>
-              </div>
+        <section className="section audience-section">
+          <div className="container audience-layout">
+            <div className="audience-copy reveal">
+              <p>Para quem é</p>
+              <h2>Para pessoas curiosas sobre tecnologia — em qualquer momento da jornada.</h2>
             </div>
-
-            <div className="fit-layout">
-              <article className="fit-column fit-positive reveal">
-                <span className="fit-label"><Check size={15} /> Faz sentido para você</span>
-                <h3>Se você quer aprender em movimento.</h3>
-                <ul>
-                  <li><Check size={18} /> Quer sair da teoria e construir projetos reais.</li>
-                  <li><Check size={18} /> Procura direção quando uma dúvida trava seu avanço.</li>
-                  <li><Check size={18} /> Valoriza feedback, troca de experiências e colaboração.</li>
-                  <li><Check size={18} /> Quer criar constância e conexões na tecnologia.</li>
-                </ul>
-              </article>
-              <article className="fit-column fit-negative reveal">
-                <span className="fit-label"><X size={15} /> Talvez não seja para você</span>
-                <h3>Se você espera resultado sem participação.</h3>
-                <ul>
-                  <li><X size={18} /> Busca promessa de emprego ou renda rápida.</li>
-                  <li><X size={18} /> Prefere apenas consumir conteúdo, sem trocar com ninguém.</li>
-                  <li><X size={18} /> Espera evoluir sem prática e sem consistência.</li>
-                  <li><X size={18} /> Não aceita uma convivência respeitosa e colaborativa.</li>
-                </ul>
-              </article>
+            <div className="audience-list reveal">
+              <span><Code2 size={19} /> Quem está começando a programar</span>
+              <span><Layers3 size={19} /> Quem estuda dados, IA ou automação</span>
+              <span><FolderGit2 size={19} /> Quem quer compartilhar projetos</span>
+              <span><BriefcaseBusiness size={19} /> Quem está pensando na carreira</span>
+              <span><Handshake size={19} /> Quem acredita em aprendizado coletivo</span>
             </div>
-
-            <p className="fit-commitment reveal">
-              <UsersRound size={18} /> Conhecimento prévio não é requisito. Participação é o que faz a comunidade acontecer.
-            </p>
           </div>
         </section>
 
-        <section id="investimento" className="section price-section">
-          <div className="container price-layout">
-            <div className="price-copy reveal">
-              <p className="section-note">Acesso completo, sem complicação</p>
-              <h2>Toda a comunidade por R$ 19,90 ao mês.</h2>
+        <section id="acesso-gratuito" className="section free-access-section">
+          <div className="container free-access-layout">
+            <div className="free-access-copy reveal">
+              <span className="free-seal"><Check size={17} /> acesso gratuito</span>
+              <h2>Gratuito de verdade.</h2>
               <p>
-                O valor é mensal e recorrente. Você vê todas as condições no checkout
-                antes de confirmar sua inscrição.
+                O Pacheco Lab não tem plano pago, checkout ou cobrança recorrente.
+                Você entra pelos canais oficiais e participa sem cadastrar cartão.
               </p>
-              <div className="payment-safety">
-                <ShieldCheck size={20} />
-                <span><strong>Pagamento processado pela Kiwify</strong>Seus dados de pagamento não passam por este site.</span>
-              </div>
             </div>
-
-            <article className="price-card reveal">
-              <div className="price-card-head">
-                <div><span>Plano mensal</span><h3>Pacheco Lab.</h3></div>
-                <span className="plan-status"><i /> Acesso privado</span>
+            <div className="free-access-actions reveal">
+              <div>
+                <strong>Escolha seu ponto de entrada</strong>
+                <span>Você pode participar dos dois canais.</span>
               </div>
-              <div className="price-value">
-                <strong><small>R$</small> 19,90</strong>
-                <span>por mês</span>
-              </div>
-              <ul>
-                <li><Check size={16} /> Discord e WhatsApp da comunidade</li>
-                <li><Check size={16} /> Canais de dúvidas e projetos</li>
-                <li><Check size={16} /> Curadoria de conteúdos</li>
-                <li><Check size={16} /> Palestras, encontros e oportunidades</li>
-                <li><Check size={16} /> Networking com outros participantes</li>
-              </ul>
-              <CheckoutButton className="full-button">Assinar por R$ 19,90/mês</CheckoutButton>
-              <p className="price-terms">
-                Assinatura recorrente. Cancele quando quiser. O acesso permanece
-                ativo enquanto a assinatura estiver regular.
-              </p>
-            </article>
+              <JoinLink className="full-button">Entrar gratuitamente pelo WhatsApp</JoinLink>
+              <JoinLink href={DISCORD_URL} variant="secondary" className="full-button">Entrar gratuitamente pelo Discord</JoinLink>
+              <small><ShieldCheck size={14} /> Sem cartão. Sem assinatura. Sem período de teste.</small>
+            </div>
           </div>
         </section>
 
         <section id="duvidas" className="section faq-section">
           <div className="container faq-layout">
             <div className="faq-heading reveal">
-              <p className="section-note">Antes de entrar</p>
-              <h2>Perguntas honestas. Respostas diretas.</h2>
-              <p>Veja como funcionam o acesso, a assinatura e o cancelamento antes de entrar.</p>
+              <p>Dúvidas frequentes</p>
+              <h2>Respostas diretas antes de você entrar.</h2>
+              <span>Sem letras pequenas e sem promessa exagerada.</span>
             </div>
             <div className="faq-list">
               {faqItems.map((item) => (
@@ -946,13 +785,15 @@ export default function LandingPage() {
         </section>
 
         <section className="final-cta-section">
-          <div className="final-orb" aria-hidden="true"><span /><i /><i /></div>
+          <div className="final-network" aria-hidden="true"><span /><i /><i /></div>
           <div className="container final-cta reveal">
-            <Image src="/pacheco-lab-logo.png" alt="" width={88} height={88} aria-hidden="true" />
-            <h2>Seu próximo passo pode começar com uma conversa.</h2>
-            <p>Entre para aprender com mais direção, praticar com constância e crescer ao lado de outras pessoas.</p>
-            <CheckoutButton>Quero entrar na Pacheco Lab.</CheckoutButton>
-            <span className="final-note"><ShieldCheck size={15} /> Checkout seguro pela Kiwify</span>
+            <Image src="/pacheco-lab-logo.png" alt="" width={78} height={78} aria-hidden="true" />
+            <p>Faça parte desde o início.</p>
+            <h2>Traga sua curiosidade. A comunidade começa na conversa.</h2>
+            <JoinLink>Entrar na comunidade gratuitamente</JoinLink>
+            <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="final-discord-link">
+              Prefiro entrar pelo Discord <ArrowUpRight size={15} aria-hidden="true" />
+            </a>
           </div>
         </section>
       </main>
@@ -960,19 +801,16 @@ export default function LandingPage() {
       <AnimatePresence>
         {showMobileCta && !decisionAreaVisible && !mobileOpen && (
           <motion.aside
-            className="mobile-checkout-bar"
+            className="mobile-join-bar"
             initial={{ y: 90, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 90, opacity: 0 }}
-            transition={{ duration: reducedMotion ? 0 : 0.28, ease: [0.22, 1, 0.36, 1] }}
-            aria-label="Inscrição na Pacheco Lab."
+            transition={{ duration: reducedMotion ? 0 : 0.24, ease: [0.22, 1, 0.36, 1] }}
+            aria-label="Entrada gratuita na Pacheco Lab."
           >
-            <div>
-              <span>Plano mensal</span>
-              <strong>R$ 19,90/mês</strong>
-            </div>
-            <a href={CHECKOUT_URL} aria-label="Entrar para a Pacheco Lab. pelo checkout seguro da Kiwify">
-              Quero entrar <ArrowUpRight size={17} aria-hidden="true" />
+            <div><span>Acesso gratuito</span><strong>Sem cartão</strong></div>
+            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+              Entrar agora <ArrowUpRight size={17} aria-hidden="true" />
             </a>
           </motion.aside>
         )}
@@ -984,8 +822,12 @@ export default function LandingPage() {
             <span className="brand-logo"><Image src="/pacheco-lab-logo.png" alt="" width={38} height={38} /></span>
             <span>Pacheco Lab.</span>
           </a>
-          <p>Programação se aprende melhor quando o conhecimento circula.</p>
-          <a href="#hero">Voltar ao topo <ArrowUp size={14} aria-hidden="true" /></a>
+          <p>Comunidade gratuita para aprender, compartilhar e construir em tecnologia.</p>
+          <div className="footer-links">
+            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href={DISCORD_URL} target="_blank" rel="noreferrer">Discord</a>
+            <a href="#hero">Topo <ArrowUp size={14} aria-hidden="true" /></a>
+          </div>
         </div>
       </footer>
     </div>

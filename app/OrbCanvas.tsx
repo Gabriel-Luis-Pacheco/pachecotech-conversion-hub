@@ -88,16 +88,16 @@ const fragmentShader = `
     float aurora = smoothstep(0.67, 0.9, sin(vNoise * 24.0 + vSpunPosition.x * 2.4 - uTime * 1.05) * 0.5 + 0.5);
     float pulse = sin(uTime * 1.45 + vSpunPosition.y * 2.0) * 0.5 + 0.5;
 
-    vec3 deep = vec3(0.055, 0.02, 0.13);
-    vec3 violet = vec3(0.43, 0.13, 0.96);
-    vec3 blue = vec3(0.12, 0.39, 1.0);
-    vec3 pearl = vec3(0.78, 0.7, 1.0);
+    vec3 deep = vec3(0.025, 0.08, 0.09);
+    vec3 teal = vec3(0.08, 0.55, 0.5);
+    vec3 cyan = vec3(0.12, 0.48, 0.58);
+    vec3 pearl = vec3(0.72, 0.96, 0.92);
 
-    vec3 color = mix(deep, violet, clamp(vNoise * 1.05, 0.0, 1.0));
-    color = mix(color, blue, contour * 0.48);
+    vec3 color = mix(deep, teal, clamp(vNoise * 1.05, 0.0, 1.0));
+    color = mix(color, cyan, contour * 0.42);
     color = mix(color, pearl, fresnel * 0.72 + latitude * 0.12);
-    color += vec3(0.38, 0.2, 0.78) * aurora * (0.18 + pulse * 0.2);
-    color += vec3(0.08, 0.2, 0.5) * latitude * (0.08 + pulse * 0.08);
+    color += vec3(0.12, 0.56, 0.49) * aurora * (0.16 + pulse * 0.17);
+    color += vec3(0.06, 0.3, 0.38) * latitude * (0.08 + pulse * 0.07);
     float alpha = 0.56 + fresnel * 0.42 + contour * 0.08 + aurora * 0.08;
     gl_FragColor = vec4(color, alpha);
   }
@@ -239,7 +239,7 @@ function EnergyOrb({ reducedMotion }: { reducedMotion: boolean }) {
       <mesh scale={0.74}>
         <sphereGeometry args={[2.08, 48, 48]} />
         <meshBasicMaterial
-          color="#8f5cff"
+          color="#2bb3a3"
           transparent
           opacity={0.2}
           depthWrite={false}
@@ -249,7 +249,7 @@ function EnergyOrb({ reducedMotion }: { reducedMotion: boolean }) {
 
       <mesh ref={wireShell} scale={1.045} rotation={[0.16, 0.32, 0]}>
         <icosahedronGeometry args={[2.15, 3]} />
-        <meshBasicMaterial color="#a98cff" wireframe transparent opacity={0.075} />
+        <meshBasicMaterial color="#72d8cc" wireframe transparent opacity={0.065} />
       </mesh>
 
       <points>
@@ -257,7 +257,7 @@ function EnergyOrb({ reducedMotion }: { reducedMotion: boolean }) {
           <bufferAttribute attach="attributes-position" args={[nodes, 3]} />
         </bufferGeometry>
         <pointsMaterial
-          color="#eee9ff"
+          color="#e1fffb"
           size={0.052}
           sizeAttenuation
           transparent
@@ -272,7 +272,7 @@ function EnergyOrb({ reducedMotion }: { reducedMotion: boolean }) {
           <bufferAttribute attach="attributes-position" args={[connections, 3]} />
         </bufferGeometry>
         <lineBasicMaterial
-          color="#a88cff"
+          color="#62cfc2"
           transparent
           opacity={0.24}
           depthWrite={false}
@@ -286,7 +286,7 @@ function EnergyOrb({ reducedMotion }: { reducedMotion: boolean }) {
           <bufferAttribute attach="attributes-position" args={[dust, 3]} />
         </bufferGeometry>
         <pointsMaterial
-          color="#8fb5ff"
+          color="#75cad5"
           size={0.034}
           sizeAttenuation
           transparent
@@ -299,7 +299,7 @@ function EnergyOrb({ reducedMotion }: { reducedMotion: boolean }) {
       <mesh ref={energyKnot} rotation={[0.5, 0.9, 0.22]}>
         <torusKnotGeometry args={[2.18, 0.012, 180, 12, 2, 3]} />
         <meshBasicMaterial
-          color="#8c6dff"
+          color="#3bbbac"
           wireframe
           transparent
           opacity={0.12}
@@ -313,7 +313,7 @@ function EnergyOrb({ reducedMotion }: { reducedMotion: boolean }) {
           <mesh key={`satellite-a-${index}`} position={position}>
             <sphereGeometry args={[index % 3 === 0 ? 0.055 : 0.032, 12, 12]} />
             <meshBasicMaterial
-              color={index % 2 === 0 ? "#f2ecff" : "#8fb5ff"}
+              color={index % 2 === 0 ? "#e1fffb" : "#75cad5"}
               transparent
               opacity={0.9}
               depthWrite={false}
@@ -328,7 +328,7 @@ function EnergyOrb({ reducedMotion }: { reducedMotion: boolean }) {
           <mesh key={`satellite-b-${index}`} position={position}>
             <sphereGeometry args={[0.026, 10, 10]} />
             <meshBasicMaterial
-              color="#d8c8ff"
+              color="#a8eee6"
               transparent
               opacity={0.72}
               depthWrite={false}
@@ -341,15 +341,15 @@ function EnergyOrb({ reducedMotion }: { reducedMotion: boolean }) {
       <group ref={orbitalRings}>
         <mesh rotation={[1.14, 0.22, 0.18]}>
           <torusGeometry args={[2.62, 0.009, 8, 180]} />
-          <meshBasicMaterial color="#c1aaff" transparent opacity={0.58} depthWrite={false} />
+          <meshBasicMaterial color="#9cebe1" transparent opacity={0.5} depthWrite={false} />
         </mesh>
         <mesh rotation={[0.62, 1.16, 0.12]} scale={0.94}>
           <torusGeometry args={[2.7, 0.007, 8, 180]} />
-          <meshBasicMaterial color="#5687ff" transparent opacity={0.36} depthWrite={false} />
+          <meshBasicMaterial color="#4db7c3" transparent opacity={0.3} depthWrite={false} />
         </mesh>
         <mesh rotation={[0.2, 0.54, 1.24]} scale={0.83}>
           <torusGeometry args={[2.78, 0.005, 8, 180]} />
-          <meshBasicMaterial color="#d8c8ff" transparent opacity={0.2} depthWrite={false} />
+          <meshBasicMaterial color="#c5f4ee" transparent opacity={0.18} depthWrite={false} />
         </mesh>
       </group>
     </group>

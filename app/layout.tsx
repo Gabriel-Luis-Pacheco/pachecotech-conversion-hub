@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     productionUrl,
   ),
   title: {
-    default: "Pacheco Lab. — Comunidade privada de programação",
+    default: "Pacheco Lab. — Comunidade gratuita de tecnologia",
     template: "%s | Pacheco Lab.",
   },
   description:
-    "Comunidade privada para tirar dúvidas, praticar projetos e evoluir na programação ao lado de outras pessoas.",
+    "Comunidade gratuita para aprender, compartilhar projetos, tirar dúvidas e acompanhar conteúdos sobre programação, dados, automação e carreira.",
   alternates: {
     canonical: "/",
   },
@@ -43,22 +43,22 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "/",
     siteName: "Pacheco Lab.",
-    title: "Pacheco Lab. — Comunidade privada de programação",
-    description: "Comece na programação. Não evolua sozinho.",
+    title: "Pacheco Lab. — Comunidade gratuita de tecnologia",
+    description: "Aprenda, compartilhe projetos e evolua em tecnologia com outras pessoas.",
     images: [
       {
-        url: "/og.png",
-        width: 1731,
-        height: 908,
-        alt: "Pacheco Lab. — Comece na programação. Não evolua sozinho.",
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Pacheco Lab. — Comunidade gratuita de tecnologia.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pacheco Lab. — Comunidade privada de programação",
-    description: "Comece na programação. Não evolua sozinho.",
-    images: ["/og.png"],
+    title: "Pacheco Lab. — Comunidade gratuita de tecnologia",
+    description: "Aprenda, compartilhe projetos e evolua em tecnologia com outras pessoas.",
+    images: ["/opengraph-image"],
   },
 };
 
