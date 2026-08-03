@@ -317,16 +317,16 @@ export default function LandingPage() {
 
       const intro = gsap.timeline({ defaults: { ease: "expo.out" } });
       intro
-        .fromTo(".hero-kicker", { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.42 })
+        .fromTo(".hero-kicker", { y: 8 }, { y: 0, duration: 0.38 })
         .fromTo(
           ".hero-line span",
-          { yPercent: 108 },
-          { yPercent: 0, duration: 0.88, stagger: 0.08 },
+          { yPercent: 14 },
+          { yPercent: 0, duration: 0.72, stagger: 0.06 },
           "-=0.18",
         )
-        .fromTo(".hero-copy", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55 }, "-=0.46")
-        .fromTo(".hero-actions", { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, "-=0.36")
-        .fromTo(".hero-trust", { opacity: 0 }, { opacity: 1, duration: 0.45 }, "-=0.2");
+        .fromTo(".hero-copy", { y: 10 }, { y: 0, duration: 0.48 }, "-=0.4")
+        .fromTo(".hero-actions", { y: 8 }, { y: 0, duration: 0.42 }, "-=0.32")
+        .fromTo(".hero-trust", { opacity: 0.72 }, { opacity: 1, duration: 0.36 }, "-=0.18");
 
       gsap.to(".orb-wrap", {
         y: 74,
