@@ -1,0 +1,11 @@
+sources
+work
+dist
+.openai
+.wrangler
+examples
+worker
+drizzle
+db
+build
+*.log
