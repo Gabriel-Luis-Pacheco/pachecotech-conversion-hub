@@ -1,7 +1,7 @@
-# Pacheco Lab.
+# Pacheco Lab
 
-Landing page da comunidade gratuita Pacheco Lab., construída com Next.js,
-React, TypeScript, GSAP, Framer Motion e React Three Fiber.
+Landing page da comunidade gratuita Pacheco Lab, construída com Next.js,
+React e TypeScript.
 
 ## Desenvolvimento
 
@@ -22,15 +22,22 @@ npm test
 
 ## Estrutura
 
-- `app/LandingPage.tsx`: conteúdo, navegação e interações da página;
-- `app/OrbCanvas.tsx`: elemento visual WebGL com fallback em CSS;
-- `app/globals.css`: tokens e sistema visual responsivo;
-- `app/chatgpt-auth.ts`: helper de autenticação opcional preservado do projeto-base;
-- `tests/rendered-html.test.mjs`: verificações de build, comunicação gratuita e links oficiais.
+- `app/LandingPage.tsx`: Server Component com o conteúdo e os links oficiais;
+- `app/MobileMenu.tsx`: único componente cliente, responsável pelo menu mobile;
+- `app/globals.css`: tokens, estilos responsivos e estados acessíveis;
+- `tests/rendered-html.test.mjs`: verificações de build, clareza dos textos e links.
 
-Os links oficiais de entrada ficam centralizados em `LandingPage.tsx`:
+Os links oficiais do WhatsApp e do Discord ficam centralizados em
+`app/LandingPage.tsx`. Não há checkout, cobrança ou integração com gateway de
+pagamento.
 
-- WhatsApp: ação principal;
-- Discord: ação complementar.
+## Métricas
 
-Não há checkout, cobrança ou integração com gateway de pagamento no projeto.
+A página usa o Vercel Web Analytics para medir pageviews sem adicionar um
+gerenciador de tags. Todos os links de entrada possuem os atributos
+`data-cta-channel` e `data-cta-placement`, que identificam o canal e a posição
+do CTA no HTML.
+
+Eventos personalizados de entrada não foram ativados porque o projeto está no
+plano Hobby da Vercel. Os atributos deixam a página preparada para essa medição
+caso o recurso seja habilitado no futuro.
