@@ -13,49 +13,62 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    productionUrl,
-  ),
+  metadataBase: new URL(productionUrl),
+  applicationName: "PachecoLab",
   title: {
-    default: "Pacheco Lab — Comunidade gratuita no WhatsApp e Discord",
-    template: "%s | Pacheco Lab",
+    default: "PachecoLab — Comunidade gratuita de programação e tecnologia",
+    template: "%s | PachecoLab",
   },
   description:
-    "Comunidade gratuita com grupo no WhatsApp e servidor no Discord para tirar dúvidas, compartilhar projetos e conversar sobre tecnologia.",
+    "PachecoLab (Pacheco Lab) é uma comunidade gratuita de programação e tecnologia no WhatsApp e Discord para tirar dúvidas, compartilhar projetos e conversar sobre programação, dados, automação, IA e carreira.",
   alternates: {
     canonical: "/",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
   icons: {
     icon: "/pacheco-lab-logo.png",
     shortcut: "/pacheco-lab-logo.png",
     apple: "/pacheco-lab-logo.png",
   },
+  manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: "/",
-    siteName: "Pacheco Lab",
-    title: "Pacheco Lab — Comunidade gratuita no WhatsApp e Discord",
-    description: "Aprenda tecnologia com outras pessoas pelo WhatsApp e pelo Discord.",
+    siteName: "PachecoLab",
+    title: "PachecoLab — Comunidade gratuita de programação e tecnologia",
+    description:
+      "Comunidade gratuita para aprender, tirar dúvidas, compartilhar projetos e conversar sobre programação e tecnologia no WhatsApp e Discord.",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Pacheco Lab — comunidade gratuita no WhatsApp e Discord.",
+        alt: "PachecoLab — comunidade gratuita de programação e tecnologia.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pacheco Lab — Comunidade gratuita no WhatsApp e Discord",
-    description: "Aprenda tecnologia com outras pessoas pelo WhatsApp e pelo Discord.",
+    title: "PachecoLab — Comunidade gratuita de programação e tecnologia",
+    description:
+      "Comunidade gratuita para aprender, tirar dúvidas, compartilhar projetos e conversar sobre programação e tecnologia.",
     images: ["/opengraph-image"],
   },
+  category: "technology",
 };
 
 export default function RootLayout({
