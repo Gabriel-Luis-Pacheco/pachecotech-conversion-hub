@@ -1,0 +1,20 @@
+# PachecoLab
+
+> PachecoLab, também escrito Pacheco Lab, é uma comunidade gratuita de programação e tecnologia.
+
+Site oficial: https://pacheco-lab-comunidade.vercel.app/
+
+A comunidade reúne pessoas que estão começando, estudando ou trabalhando com tecnologia para tirar dúvidas, compartilhar projetos e conversar sobre programação, dados, inteligência artificial, automação, estudos, carreira e outros assuntos de tecnologia.
+
+## Participação
+
+- WhatsApp: https://chat.whatsapp.com/GaIYpxCJBLSKmv4L863dFB
+- Discord: https://discord.gg/9vxmxCFkDq
+
+## Conteúdo público principal
+
+- Página inicial: https://pacheco-lab-comunidade.vercel.app/
+- Sitemap: https://pacheco-lab-comunidade.vercel.app/sitemap.xml
+- Robots: https://pacheco-lab-comunidade.vercel.app/robots.txt
+
+Este arquivo é apenas um resumo complementar para consumidores automatizados. A fonte canônica das informações é o conteúdo público do site e seus metadados estruturados.
