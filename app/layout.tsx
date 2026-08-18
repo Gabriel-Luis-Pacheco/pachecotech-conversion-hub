@@ -7,6 +7,10 @@ const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : "https://pacheco-lab-comunidade.vercel.app";
 
+const googleSiteVerification =
+  process.env.GOOGLE_SITE_VERIFICATION ??
+  "FsYP3_lx6RRL60B4xUq4Bc-PyJqEBeqaXu_s8U-oA1Q";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -35,9 +39,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  verification: process.env.GOOGLE_SITE_VERIFICATION
-    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
-    : undefined,
+  verification: {
+    google: googleSiteVerification,
+  },
   icons: {
     icon: "/pacheco-lab-logo.png",
     shortcut: "/pacheco-lab-logo.png",
