@@ -14,7 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
     icons: [
       {
         src: "/pacheco-lab-logo.png",
-        sizes: "512x512",
+        sizes: "any",
         type: "image/png",
       },
     ],
