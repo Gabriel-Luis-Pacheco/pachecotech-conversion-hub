@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LandingPage, { DISCORD_URL, WHATSAPP_URL } from "./LandingPage";
+import LandingPage from "./LandingPage";
 
 const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
@@ -24,7 +24,6 @@ const structuredData = {
       logo: `${productionUrl}/pacheco-lab-logo.png`,
       description:
         "Comunidade gratuita de programação e tecnologia para tirar dúvidas, compartilhar projetos e conversar sobre programação, dados, inteligência artificial, automação, estudos e carreira.",
-      sameAs: [WHATSAPP_URL, DISCORD_URL],
     },
     {
       "@type": "WebSite",
